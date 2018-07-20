@@ -1,0 +1,7 @@
+{{# select }}
+<select class="input {{ styleModifier }}{{# isInvalid }} input--invalid{{/ isInvalid }}" id="{{ id }}" name="{{# name }}{{ name }}{{/ name }}{{^ name }}{{ id }}{{/ name }}"{{# isRequired }} required aria-required="true"{{/ isRequired}}{{#attributes}} {{name}}="{{value}}"{{/attributes}}>
+    {{# options }}
+    <option value="{{ value }}"{{# isSelected }} selected{{/ isSelected }}>{{ name }}</option>
+	{{/ options }}
+</select>
+{{/ select }}

@@ -1,0 +1,99 @@
+{
+	"title" : "DEG UI Project",
+	"mainId" : "main-content",
+	"logo" : {
+		"url": "../../images/logo.png",
+		"alt": "Logo Alt"
+	},
+	"buttonText": "Button",
+	"video": {
+		"videoID": "5le9sYdYkM"
+	},
+	"label": {
+		"id": "input",
+		"content": "Label"
+	},
+	"input": {
+		"id": "input",
+		"type": "text",
+		"placeholder": "Placeholder Text",
+		"attributes": []
+	},
+	"textarea": {
+		"id": "textarea",
+		"placeholder": "Placeholder Text",
+		"attributes": []
+	},
+	"select": {
+		"id": "select",
+		"options": [
+			{
+				"label": "Option 1",
+				"value": "1"
+			},
+			{
+				"label": "Option 2",
+				"value": "2"
+			},
+			{
+				"label": "Option 2",
+				"value": "3"
+			}
+		]
+	},
+	"field": {
+		"id": "field",
+		"isInvalid": false,
+		"label": {
+			"content": "Label"
+		},
+		"input": {
+			"type": "text",
+			"placeholder": "Placeholder Text",
+			"isRequired": true,
+			"attributes": []
+		},
+		"textarea": {
+			"placeholder": "Placeholder Text",
+			"isRequired": true
+		},
+		"select": {
+			"isRequired": true,
+			"options": [
+				{
+					"label": "Option 1",
+					"value": "1"
+				},
+				{
+					"label": "Option 2",
+					"value": "2"
+				},
+				{
+					"label": "Option 2",
+					"value": "3"
+				}
+			]
+		}
+	},
+	"primaryNav": [
+		{
+			"label": "Nav Link 1",
+			"url": ""
+		},
+		{
+			"label": "Nav Link 2",
+			"url": ""
+		},
+		{
+			"label": "Nav Link 3",
+			"url": ""
+		},
+		{
+			"label": "Nav Link 4",
+			"url": ""
+		}
+	],
+	"description" : "So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.",
+	"blockquote": "A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.",
+	"url" : "#"
+}

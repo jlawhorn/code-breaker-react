@@ -1,0 +1,29 @@
+{
+	"ignore": [
+		"node_modules/**"
+	],
+	"plugins": [
+		"transform-react-jsx",
+		["transform-object-rest-spread", { "useBuiltIns": true }],
+		"external-helpers"
+	],
+	"presets": [
+		["env", {
+        	"modules": false,
+        	"targets": {
+        		"browsers": [">1%", "ie 11"]
+     	 	}
+      	}]
+    ],
+  	"env": {
+		"test": {
+	      	"presets": [
+	      		["env", {
+	      			"targets": {
+	      				"node": "current"
+	      			}
+	      		}]
+	      	]
+	    }
+	}
+}
