@@ -1,0 +1,23 @@
+.board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (--small) {
+    .board {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (--medium) {
+    .board {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (--large) {
+    .board {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}

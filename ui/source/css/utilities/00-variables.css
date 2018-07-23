@@ -1,12 +1,37 @@
+@import ("https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700");
+
 :root {
 
 	--color-black: #000;
 	--color-white: #fff;
+	--color-mask: rgba(0,0,0,0.75);
 
-	--color-text: var(--color-black);
+	--color-gray-10: #333;
+	--color-gray-20: #666;
+	--color-gray-30: #999;
+	--color-gray-40: #CCC;
+	--color-gray-50: #EEE;
 
-	--font-family-primary: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-	--base-font-size: 1em;
+	--color-tan-10: #DBDBC7;
+	--color-tan-20: #A0955D;
+
+	--color-blue-10: #267EC1;
+	--color-blue-20: #005DD8;
+
+	--color-red-10: #D84545;
+	--color-red-20: #B53E39;
+
+	--color-green-10: #0F9305;
+
+	--color-text: var(--color-gray-10);
+
+	--font-family-primary: 'Roboto Mono', monospace;
+
+	--font-weight-light: 300;
+	--font-weight-medium: 400;
+	--font-weight-bold: 700;
+
+	--base-font-size: 1rem;
 
 	--page-width: 80rem;
 	--spacing-horizontal: 1rem;

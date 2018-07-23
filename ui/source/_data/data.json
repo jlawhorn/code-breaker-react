@@ -95,5 +95,239 @@
 	],
 	"description" : "So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.",
 	"blockquote": "A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.",
-	"url" : "#"
+	"url" : "#",
+	"piece" : {
+		"word": "Greece",
+		"viewer": "player",
+		"owner": "neutral",
+		"state": "default",
+		"disabled": false
+	},
+	"pieceList" : [
+		{
+			"piece": {
+				"word": "Greece",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Shop",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "selected",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Bridge",
+				"viewer": "player",
+				"owner": "blue",
+				"state":  "selected",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Tail",
+				"viewer": "player",
+				"owner": "red",
+				"state":  "selected",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Pole",
+				"viewer": "player",
+				"owner": "black",
+				"state":  "selected",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Post",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Stick",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Triangle",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Spider",
+				"viewer": "master",
+				"owner": "black",
+				"state":  "default"
+		,		"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Giant",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "selected",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Mint",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "selected",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Dragon",
+				"viewer": "player",
+				"owner": "red",
+				"state":  "selected",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Gold",
+				"viewer": "master",
+				"owner": "black",
+				"state":  "selected",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Check",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Jet",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Pass",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Eye",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Sub",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Deck",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Pirate",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Plane",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Orange",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Log",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Court",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Atlantis",
+				"viewer": "player",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		}
+	]
 }

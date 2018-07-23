@@ -7,7 +7,7 @@ module.exports = {
 				targets: [
 					{
 						name: "css",
-						paths: "source/css/*.css",
+						paths: "source/css/**/*.css",
 						events: ['add', 'change', 'delete'],
 						tasks: [
 							{

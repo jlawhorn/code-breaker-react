@@ -1,0 +1,150 @@
+.piece {
+    margin: 0.5rem;
+}
+
+.piece__button {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-bold);
+    border: 1px solid;
+    border-radius: 0.25rem;
+    box-shadow: 0.25rem 0.25rem rgba(0,0,0,0.25);
+    color: var(--color-gray-10);
+    transition: all 0.25s;
+    &:focus {
+        outline-color: var(--color-green-10);
+    }
+    &:active {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.piece__label {
+    font-size: 1rem;
+}
+
+.piece--viewer-player {
+    &.piece--state-default {
+        .piece__button {
+            background: linear-gradient(to bottom, var(--color-gray-40) 0%, var(--color-gray-50) 100%);
+            &:enabled:hover {
+                background: linear-gradient(to top, var(--color-gray-40) 0%, var(--color-gray-50) 100%);
+            }
+        }
+    }
+    &.piece--state-selected {
+        &.piece--owner-neutral {
+            .piece__button {
+                background: linear-gradient(to bottom, var(--color-tan-10) 0%, var(--color-tan-20) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-tan-10) 0%, var(--color-tan-20) 100%);
+                }
+            }
+        },
+        &.piece--owner-blue {
+            .piece__button {
+                color: var(--color-white);
+                background: linear-gradient(to bottom, var(--color-blue-10) 0%, var(--color-blue-20) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-blue-10) 0%, var(--color-blue-20) 100%);
+                }
+            }
+        }
+        &.piece--owner-red {
+            .piece__button {
+                color: var(--color-white);
+                background: linear-gradient(to bottom, var(--color-red-10) 0%, var(--color-red-20) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-red-10) 0%, var(--color-red-20) 100%);
+                }
+            }
+        }
+        &.piece--owner-black {
+            .piece__button {
+                color: var(--color-white);
+                background: linear-gradient(to bottom, var(--color-gray-20) 0%, var(--color-black) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-gray-20) 0%, var(--color-black) 100%);
+                }
+            }
+        }
+    }
+}
+
+.piece--viewer-master {
+    &.piece--state-default {
+        .piece__button {
+            background: linear-gradient(to bottom, var(--color-gray-40) 0%, var(--color-gray-50) 100%);
+            &:enabled:hover {
+                background: linear-gradient(to top, var(--color-gray-40) 0%, var(--color-gray-50) 100%);
+            }
+        }
+        &.piece--owner-neutral {
+            .piece__button {
+                color: var(--color-tan-20);
+            }
+        }
+        &.piece--owner-blue {
+            .piece__button {
+                color: var(--color-blue-20);
+            }
+        }
+        &.piece--owner-red {
+            .piece__button {
+                color: var(--color-red-20);
+            }
+        }
+        &.piece--owner-black {
+            .piece__button {
+                color: var(--color-red-10);
+                background: linear-gradient(to bottom, var(--color-gray-20) 0%, var(--color-gray-30) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-gray-20) 0%, var(--color-gray-30) 100%);
+                }
+                .piece__label {
+                    text-shadow: 0 0 0.75em rgba(0,0,0,0.75);
+                }
+            }
+        }
+    }
+    &.piece--state-selected {
+        &.piece--owner-neutral {
+            .piece__button {
+                background: linear-gradient(to bottom, var(--color-tan-10) 0%, var(--color-tan-20) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-tan-10) 0%, var(--color-tan-20) 100%);
+                }
+            }
+        },
+        &.piece--owner-blue {
+            .piece__button {
+                color: var(--color-white);
+                background: linear-gradient(to bottom, var(--color-blue-10) 0%, var(--color-blue-20) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-blue-10) 0%, var(--color-blue-20) 100%);
+                }
+            }
+        }
+        &.piece--owner-red {
+            .piece__button {
+                color: var(--color-white);
+                background: linear-gradient(to bottom, var(--color-red-10) 0%, var(--color-red-20) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-red-10) 0%, var(--color-red-20) 100%);
+                }
+            }
+        }
+        &.piece--owner-black {
+            .piece__button {
+                color: var(--color-white);
+                background: linear-gradient(to bottom, var(--color-gray-20) 0%, var(--color-black) 100%);
+                &:enabled:hover {
+                    background: linear-gradient(to top, var(--color-gray-20) 0%, var(--color-black) 100%);
+                }
+            }
+        }
+    }
+}

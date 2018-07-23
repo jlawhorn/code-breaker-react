@@ -1,0 +1,10 @@
+li {
+    list-style: none;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+    display: inline-block;
+    appearance: none;
+}

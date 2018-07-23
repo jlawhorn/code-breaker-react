@@ -13,7 +13,7 @@
     "@deg-skeletor/plugin-postcss": "^1.0.0",
     "@deg-skeletor/plugin-rollup": "^1.0.0",
     "@deg-skeletor/plugin-watch": "^1.0.0",
-    "autoprefixer": "^9.0.0",
+    "autoprefixer": "^9.0.1",
     "cssnano": "^4.0.3",
     "postcss-color-function": "^4.0.1",
     "postcss-custom-media": "^6.0.0",
@@ -37,6 +37,7 @@
     "rollup-plugin-terser": "^1.0.1"
   },
   "dependencies": {
+    "eslint": "^5.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",

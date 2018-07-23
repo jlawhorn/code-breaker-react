@@ -1,0 +1,7 @@
+{{# piece }}
+    <li class="piece piece--state-{{ state }} piece--owner-{{ owner }} piece--viewer-{{ viewer }}">
+        <button class="piece__button"{{# disabled }} disabled="disabled"{{/ disabled }}>
+            <span class="piece__label">{{ word }}</span>
+        </button>
+    </li>
+{{/ piece }}

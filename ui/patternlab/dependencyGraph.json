@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "timestamp": 1532106295764,
+  "timestamp": 1532382639772,
   "graph": {
     "options": {
       "directed": true,
@@ -83,9 +83,7 @@
       {
         "v": "01-basics/03-graphic-elements/00-logo.mustache",
         "value": {
-          "compileState": "clean",
-          "lineagePath": "../../patterns/02-components-00-frame-_logo-link/02-components-00-frame-_logo-link.rendered.html",
-          "lineagePattern": "components-logo-link"
+          "compileState": "clean"
         }
       },
       {
@@ -156,16 +154,16 @@
         "v": "02-components/00-frame/00-header.mustache",
         "value": {
           "compileState": "clean",
-          "lineagePath": "../../patterns/03-templates-00-homepage/03-templates-00-homepage.rendered.html",
-          "lineagePattern": "templates-homepage"
+          "lineagePath": "../../patterns/03-templates-01-homepage-modal/03-templates-01-homepage-modal.rendered.html",
+          "lineagePattern": "templates-homepage-modal"
         }
       },
       {
         "v": "02-components/00-frame/01-footer.mustache",
         "value": {
           "compileState": "clean",
-          "lineagePath": "../../patterns/03-templates-00-homepage/03-templates-00-homepage.rendered.html",
-          "lineagePattern": "templates-homepage"
+          "lineagePath": "../../patterns/03-templates-01-homepage-modal/03-templates-01-homepage-modal.rendered.html",
+          "lineagePattern": "templates-homepage-modal"
         }
       },
       {
@@ -207,6 +205,22 @@
         }
       },
       {
+        "v": "02-components/03-game/board.mustache",
+        "value": {
+          "compileState": "clean",
+          "lineagePath": "../../patterns/03-templates-01-homepage-modal/03-templates-01-homepage-modal.rendered.html",
+          "lineagePattern": "templates-homepage-modal"
+        }
+      },
+      {
+        "v": "02-components/03-game/piece.mustache",
+        "value": {
+          "compileState": "clean",
+          "lineagePath": "../../patterns/02-components-03-game-board/02-components-03-game-board.rendered.html",
+          "lineagePattern": "components-board"
+        }
+      },
+      {
         "v": "03-templates/00-homepage.mustache",
         "value": {
           "compileState": "clean",
@@ -230,6 +244,28 @@
         "v": "/Users/jlawhorn/Projects/CodeBreakerReact/ui/source/_meta/_01-foot.mustache",
         "value": {
           "compileState": null
+        }
+      },
+      {
+        "v": "02-components/00-frame/03-modal.mustache",
+        "value": {
+          "compileState": "clean",
+          "lineagePath": "../../patterns/03-templates-01-homepage-modal/03-templates-01-homepage-modal.rendered.html",
+          "lineagePattern": "templates-homepage-modal"
+        }
+      },
+      {
+        "v": "02-components/03-game/new-game-modal-content.mustache",
+        "value": {
+          "compileState": "clean",
+          "lineagePath": "../../patterns/02-components-00-frame-03-modal/02-components-00-frame-03-modal.rendered.html",
+          "lineagePattern": "components-modal"
+        }
+      },
+      {
+        "v": "03-templates/01-homepage-modal.mustache",
+        "value": {
+          "compileState": "clean"
         }
       }
     ],
@@ -305,6 +341,11 @@
         "value": {}
       },
       {
+        "v": "02-components/03-game/board.mustache",
+        "w": "02-components/03-game/piece.mustache",
+        "value": {}
+      },
+      {
         "v": "03-templates/00-homepage.mustache",
         "w": "02-components/00-frame/00-header.mustache",
         "value": {}
@@ -317,6 +358,41 @@
       {
         "v": "04-pages/00-homepage.mustache",
         "w": "03-templates/00-homepage.mustache",
+        "value": {}
+      },
+      {
+        "v": "02-components/00-frame/03-modal.mustache",
+        "w": "02-components/03-game/new-game-modal-content.mustache",
+        "value": {}
+      },
+      {
+        "v": "03-templates/00-homepage.mustache",
+        "w": "02-components/03-game/board.mustache",
+        "value": {}
+      },
+      {
+        "v": "03-templates/00-homepage.mustache",
+        "w": "02-components/00-frame/03-modal.mustache",
+        "value": {}
+      },
+      {
+        "v": "03-templates/01-homepage-modal.mustache",
+        "w": "02-components/00-frame/00-header.mustache",
+        "value": {}
+      },
+      {
+        "v": "03-templates/01-homepage-modal.mustache",
+        "w": "02-components/03-game/board.mustache",
+        "value": {}
+      },
+      {
+        "v": "03-templates/01-homepage-modal.mustache",
+        "w": "02-components/00-frame/03-modal.mustache",
+        "value": {}
+      },
+      {
+        "v": "03-templates/01-homepage-modal.mustache",
+        "w": "02-components/00-frame/01-footer.mustache",
         "value": {}
       }
     ]
