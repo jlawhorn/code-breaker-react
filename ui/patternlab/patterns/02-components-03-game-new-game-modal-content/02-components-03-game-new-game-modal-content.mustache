@@ -2,17 +2,41 @@
     <form class="">
         <legend>New Game</legend>
         <fieldset>
-            <label>I am a...</label>
-            <label for="playerTypePlayer"><span class="sub-label">Player</span> <input type="radio" id="playerTypePlayer" name="playerType" value="player" required="required" /></label>
-            <label for="playerTypeMaster"><span class="sub-label">Code Master</span> <input type="radio" id="playerTypeMaster" name="playerType" value="master" required="required" /></label>
+            <label for="name">I am...</label>
+            <div class="field">
+                <input type="text" placeholder="Name" required="required" id="name" name="name" maxlength="20" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <label for="playerTypePlayer">I am a...</label>
+            <div class="switch field">
+                <div class="switch__item">
+                    <input type="radio" id="playerTypePlayer" name="playerType" value="player" required="required" class="switch__input is-vishidden" />
+                    <label for="playerTypePlayer" class="switch__label"><span class="sub-label">Player</span></label>
+                </div>
+                <div class="switch__item">
+                    <input type="radio" id="playerTypeMaster" name="playerType" value="master" required="required" class="switch__input is-vishidden" />
+                    <label for="playerTypeMaster" class="switch__label"><span class="sub-label">Code Master</span></label>
+                </div>
+            </div>
         </fieldset>
 
         <fieldset>
-            <label>I am on...</label>
-            <label for="playerTeamBlue"><span class="sub-label">Blue Team</span> <input type="radio" id="playerTeamBlue" name="playerTeam" value="blue" required="required" /></label>
-            <label for="playerTeamRed"><span class="sub-label">Red Team</span> <input type="radio" id="playerTeamRed" name="playerTeam" value="red" required="required" /></label>
+            <label for="playerTeamBlue">I am on...</label>
+            <div class="switch field">
+                <div class="switch__item">
+                    <input type="radio" id="playerTeamBlue" name="playerTeam" value="blue" required="required" class="switch__input is-vishidden" />
+                    <label for="playerTeamBlue" class="switch__label"><span class="sub-label">Blue Team</span></label>
+                </div>
+                <div class="switch__item">
+                    <input type="radio" id="playerTeamRed" name="playerTeam" value="red" required="required" class="switch__input is-vishidden" />
+                    <label for="playerTeamRed" class="switch__label"><span class="sub-label">Red Team</span></label>
+                </div>
+            </div>
         </fieldset>
 
-        <input type="submit" value="Start" title="Start" class="button button--primary" />
+        <div class="field">
+            <input type="submit" value="Start" title="Start" class="button button--primary" />
+        </div>
     </form>
 </section>

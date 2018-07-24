@@ -1,3 +1,11 @@
 .site-footer {
-	
+    padding: 1rem 0.25rem;
+    margin-top: 1rem;
+    border-top: 2px solid var(--color-gray-30);
+    background-color: var(--color-gray-50);
+    .shim {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

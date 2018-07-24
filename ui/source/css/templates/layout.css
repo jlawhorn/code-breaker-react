@@ -1,1 +1,9 @@
-/* Layout Styles */
+body {
+    transition: background-color 1s;
+}
+
+.shim {
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--width-page);
+}

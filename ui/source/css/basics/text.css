@@ -13,3 +13,11 @@ legend,
 .sub-label {
 	font-weight: var(--font-weight-bold);
 }
+
+legend {
+	margin-bottom: 1rem;
+}
+
+.copyright {
+	font-size: 0.65rem;
+}

@@ -7,7 +7,7 @@
     padding: 1rem;
     width: 100%;
     font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-normal);
     border: 1px solid;
     border-radius: 0.25rem;
     box-shadow: 0.25rem 0.25rem rgba(0,0,0,0.25);
@@ -84,16 +84,22 @@
         }
         &.piece--owner-neutral {
             .piece__button {
+                font-weight: var(--font-weight-bold);
+                border-width: 2px;
                 color: var(--color-tan-20);
             }
         }
         &.piece--owner-blue {
             .piece__button {
+                font-weight: var(--font-weight-bold);
+                border-width: 2px;
                 color: var(--color-blue-20);
             }
         }
         &.piece--owner-red {
             .piece__button {
+                font-weight: var(--font-weight-bold);
+                border-width: 2px;
                 color: var(--color-red-20);
             }
         }

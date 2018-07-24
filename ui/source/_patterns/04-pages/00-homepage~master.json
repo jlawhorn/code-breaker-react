@@ -1,0 +1,229 @@
+{
+    "pieceList" : [
+		{
+			"piece": {
+				"word": "Greece",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Shop",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Bridge",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Tail",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Pole",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Post",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": true
+			}
+		},
+		{
+			"piece": {
+				"word": "Stick",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Triangle",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Spider",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Giant",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Mint",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Dragon",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Gold",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Check",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Jet",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Pass",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Eye",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Sub",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Deck",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Pirate",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Plane",
+				"viewer": "master",
+				"owner": "black",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Orange",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Log",
+				"viewer": "master",
+				"owner": "blue",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Court",
+				"viewer": "master",
+				"owner": "neutral",
+				"state":  "default",
+				"disabled": false
+			}
+		},
+		{
+			"piece": {
+				"word": "Atlantis",
+				"viewer": "master",
+				"owner": "red",
+				"state":  "default",
+				"disabled": false
+			}
+		}
+	]
+}

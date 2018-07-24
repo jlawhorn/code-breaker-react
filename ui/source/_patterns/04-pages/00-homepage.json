@@ -1,3 +1,6 @@
 {
-	"title" : "Code Breakers"
+	"score": {
+		"red": 9,
+		"blue": 8
+	}
 }

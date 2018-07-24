@@ -1,0 +1,19 @@
+.color-red {
+    color: var(--color-red-10);
+}
+
+.color-blue {
+    color: var(--color-blue-10);
+}
+
+.color-green {
+    color: var(--color-green-10);
+}
+
+.background-red {
+    background-color: var(--color-red-10);
+}
+
+.background-blue {
+    background-color: var(--color-blue-10);
+}
