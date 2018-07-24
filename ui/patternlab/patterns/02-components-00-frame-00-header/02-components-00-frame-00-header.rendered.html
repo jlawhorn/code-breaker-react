@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>DEG UI Project</title>
+		<title>Code Names React</title>
 
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,8 +23,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1532382348596" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1532382348596" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1532462781058" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1532462781058" media="all" />
 
    	 	<!-- End Pattern Lab -->
 
@@ -32,13 +32,24 @@
 	<body class="">
 	<a class="is-vishidden" href="#main-content">Skip to main content</a>
 <header class="site-header" role="banner">
-	<a href="#" class="logo-link">
-	Code Breakers
-</a>
+	<div class="shim">
+		<div class="site-logo">
+	<a href="" class="site-logo_link">
+		<img src="../../images/logo.png" alt="Codenames" class="site-logo_image" />
+	</a>
+</div>
+		<div class="site-title">
+			<h1 class="site-title_text">Code Names/room-name</h1>
+		</div>
+		<div class="participants">
+    <img src="../../images/ico_teams.png" alt="teams" class="participants__icon" />
+    <button id="scores" class="scores button"><span class="score score--blue">3</span>-<span class="score score--red">1</span></button>
+</div>
+	</div>
 </header>
 	<!-- Begin Pattern Lab JS -->
 	<script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"components-logo-link","lineagePath":"../../patterns/02-components-00-frame-_logo-link/02-components-00-frame-_logo-link.rendered.html"}],"lineage":[{"lineagePattern":"components-logo-link","lineagePath":"../../patterns/02-components-00-frame-_logo-link/02-components-00-frame-_logo-link.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"templates-homepage","lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.rendered.html"}],"lineageR":[{"lineagePattern":"templates-homepage","lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"frame"},"patternExtension":"mustache","patternName":"Header","patternPartial":"components-header","patternState":"","patternEngineName":"mustache","extraOutput":{}}
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"components-logo","lineagePath":"../../patterns/02-components-00-frame-05-logo/02-components-00-frame-05-logo.rendered.html"},{"lineagePattern":"components-participants","lineagePath":"../../patterns/02-components-03-game-participants/02-components-03-game-participants.rendered.html"}],"lineage":[{"lineagePattern":"components-logo","lineagePath":"../../patterns/02-components-00-frame-05-logo/02-components-00-frame-05-logo.rendered.html"},{"lineagePattern":"components-participants","lineagePath":"../../patterns/02-components-03-game-participants/02-components-03-game-participants.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"templates-homepage-modal","lineagePath":"../../patterns/03-templates-00-homepage-modal/03-templates-00-homepage-modal.rendered.html"},{"lineagePattern":"templates-homepage-participants","lineagePath":"../../patterns/03-templates-00-homepage-participants/03-templates-00-homepage-participants.rendered.html"},{"lineagePattern":"templates-homepage-winner-blue","lineagePath":"../../patterns/03-templates-00-homepage-winner-blue/03-templates-00-homepage-winner-blue.rendered.html"},{"lineagePattern":"templates-homepage-winner-red","lineagePath":"../../patterns/03-templates-00-homepage-winner-red/03-templates-00-homepage-winner-red.rendered.html"},{"lineagePattern":"templates-homepage","lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.rendered.html"}],"lineageR":[{"lineagePattern":"templates-homepage-modal","lineagePath":"../../patterns/03-templates-00-homepage-modal/03-templates-00-homepage-modal.rendered.html"},{"lineagePattern":"templates-homepage-participants","lineagePath":"../../patterns/03-templates-00-homepage-participants/03-templates-00-homepage-participants.rendered.html"},{"lineagePattern":"templates-homepage-winner-blue","lineagePath":"../../patterns/03-templates-00-homepage-winner-blue/03-templates-00-homepage-winner-blue.rendered.html"},{"lineagePattern":"templates-homepage-winner-red","lineagePath":"../../patterns/03-templates-00-homepage-winner-red/03-templates-00-homepage-winner-red.rendered.html"},{"lineagePattern":"templates-homepage","lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"frame"},"patternExtension":"mustache","patternName":"Header","patternPartial":"components-header","patternState":"","patternEngineName":"mustache","extraOutput":{}}
 </script>
 
 <script>
@@ -74,10 +85,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1532382348596">
+<script id="pl-js-polyfill-insert-1532462781058">
   (function() {
     if (self != top) {
-      var cb = '1532382348596';
+      var cb = '1532462781058';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -87,10 +98,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1532382348596">
+<script id="pl-js-insert-1532462781058">
   (function() {
     if (self != top) {
-      var cb = '1532382348596';
+      var cb = '1532462781058';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Code Names React</title>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<!-- Begin Pattern Lab Specific Styles -->
+		<link rel="stylesheet" href="../../css/styleguide.css">
+		<!-- End Pattern Lab Specific Styles -->
+
+		<link rel="stylesheet" href="../../css/global.css">
+
+		<link rel="icon" type="image/png" href="../../images/favicon.png">
+
+		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    	<!-- never cache patterns -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1532462781058" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1532462781058" media="all" />
+
+   	 	<!-- End Pattern Lab -->
+
+	</head>
+	<body class=" background-blue">
+	<a class="is-vishidden" href="#main-content">Skip to main content</a>
+<header class="site-header" role="banner">
+	<div class="shim">
+		<div class="site-logo">
+	<a href="" class="site-logo_link">
+		<img src="../../images/logo.png" alt="Codenames" class="site-logo_image" />
+	</a>
+</div>
+		<div class="site-title">
+			<h1 class="site-title_text">Code Names/room-name</h1>
+		</div>
+		<div class="participants">
+    <img src="../../images/ico_teams.png" alt="teams" class="participants__icon" />
+    <button id="scores" class="scores button"><span class="score score--blue">3</span>-<span class="score score--red">1</span></button>
+</div>
+	</div>
+</header>
+<div class="action-bar">
+    <div class="shim">
+        <span class="current-turn color-red">Red's Turn</span>
+        <span class="end-current-turn"><button class="button">End Red's Turn</button></span>
+    </div>
+</div>
+<div class="board-container">
+    <div class="shim">
+        <ul class="board">
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Greece</span>
+        </button>
+    </li>
+    <li class="piece piece--state-selected piece--owner-neutral piece--viewer-player">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Shop</span>
+        </button>
+    </li>
+    <li class="piece piece--state-selected piece--owner-blue piece--viewer-player">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Bridge</span>
+        </button>
+    </li>
+    <li class="piece piece--state-selected piece--owner-red piece--viewer-player">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Tail</span>
+        </button>
+    </li>
+    <li class="piece piece--state-selected piece--owner-black piece--viewer-player">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Pole</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-master">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Post</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-blue piece--viewer-master">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Stick</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-red piece--viewer-master">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Triangle</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-black piece--viewer-master">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Spider</span>
+        </button>
+    </li>
+    <li class="piece piece--state-selected piece--owner-neutral piece--viewer-master">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Giant</span>
+        </button>
+    </li>
+    <li class="piece piece--state-selected piece--owner-blue piece--viewer-master">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Mint</span>
+        </button>
+    </li>
+    <li class="piece piece--state-selected piece--owner-red piece--viewer-player">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Dragon</span>
+        </button>
+    </li>
+    <li class="piece piece--state-selected piece--owner-black piece--viewer-master">
+        <button class="piece__button" disabled="disabled">
+            <span class="piece__label">Gold</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Check</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Jet</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Pass</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Eye</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Sub</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Deck</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Pirate</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Plane</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Orange</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Log</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Court</span>
+        </button>
+    </li>
+    <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
+        <button class="piece__button">
+            <span class="piece__label">Atlantis</span>
+        </button>
+    </li>
+        </ul>
+    </div>
+</div>
+<footer class="site-footer" role="contentinfo">
+    <div class="shim">
+        <small class="copyright">&copy; Joseph Lawhorn - React Learning Project</small>
+        <button id="newGame" class="button button--new">New Game</button>
+    </div>
+</footer>
+	<!-- Begin Pattern Lab JS -->
+	<script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"components-header","lineagePath":"../../patterns/02-components-00-frame-00-header/02-components-00-frame-00-header.rendered.html"},{"lineagePattern":"components-action-bar","lineagePath":"../../patterns/02-components-00-frame-04-action-bar/02-components-00-frame-04-action-bar.rendered.html"},{"lineagePattern":"components-board","lineagePath":"../../patterns/02-components-03-game-board/02-components-03-game-board.rendered.html"},{"lineagePattern":"components-modal","lineagePath":"../../patterns/02-components-00-frame-03-modal/02-components-00-frame-03-modal.rendered.html"},{"lineagePattern":"components-footer","lineagePath":"../../patterns/02-components-00-frame-01-footer/02-components-00-frame-01-footer.rendered.html"}],"lineage":[{"lineagePattern":"components-header","lineagePath":"../../patterns/02-components-00-frame-00-header/02-components-00-frame-00-header.rendered.html"},{"lineagePattern":"components-action-bar","lineagePath":"../../patterns/02-components-00-frame-04-action-bar/02-components-00-frame-04-action-bar.rendered.html"},{"lineagePattern":"components-board","lineagePath":"../../patterns/02-components-03-game-board/02-components-03-game-board.rendered.html"},{"lineagePattern":"components-modal","lineagePath":"../../patterns/02-components-00-frame-03-modal/02-components-00-frame-03-modal.rendered.html"},{"lineagePattern":"components-footer","lineagePath":"../../patterns/02-components-00-frame-01-footer/02-components-00-frame-01-footer.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternType":"templates"},"patternExtension":"mustache","patternName":"Homepage Winner Blue","patternPartial":"templates-homepage-winner-blue","patternState":"","patternEngineName":"mustache","extraOutput":{}}
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+  
+  var scriptLoader = {
+    
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+    
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1532462781058">
+  (function() {
+    if (self != top) {
+      var cb = '1532462781058';
+      var js = [];
+      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
+        js.push('styleguide/bower_components/classList.min.js');
+      }
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1532462781058">
+  (function() {
+    if (self != top) {
+      var cb = '1532462781058';
+      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
+      scriptLoader.run(js,cb,'pl-js-insert');
+    }
+  })();
+</script>
+
+	<!-- End Pattern Lab JS -->
+	
+	</body>
+</html>

@@ -1,9 +1,28 @@
 <header class="site-header" role="banner">
-	<a href="#" class="logo-link">
-	Code Breakers
-</a>
+	<div class="shim">
+		<div class="site-logo">
+	<a href="" class="site-logo_link">
+		<img src="../../images/logo.png" alt="Codenames" class="site-logo_image" />
+	</a>
+</div>
+		<div class="site-title">
+			<h1 class="site-title_text">Code Names/room-name</h1>
+		</div>
+		<div class="participants">
+    <img src="../../images/ico_teams.png" alt="teams" class="participants__icon" />
+    <button id="scores" class="scores button"><span class="score score--blue">8</span>-<span class="score score--red">9</span></button>
+</div>
+	</div>
 </header>
-	<ul class="board">
+<div class="action-bar">
+    <div class="shim">
+        <span class="current-turn color-red">Red's Turn</span>
+        <span class="end-current-turn"><button class="button">End Red's Turn</button></span>
+    </div>
+</div>
+<div class="board-container">
+    <div class="shim">
+        <ul class="board">
     <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
         <button class="piece__button">
             <span class="piece__label">Greece</span>
@@ -129,7 +148,12 @@
             <span class="piece__label">Atlantis</span>
         </button>
     </li>
-</ul>
+        </ul>
+    </div>
+</div>
 <footer class="site-footer" role="contentinfo">
-
+    <div class="shim">
+        <small class="copyright">&copy; Joseph Lawhorn - React Learning Project</small>
+        <button id="newGame" class="button button--new">New Game</button>
+    </div>
 </footer>

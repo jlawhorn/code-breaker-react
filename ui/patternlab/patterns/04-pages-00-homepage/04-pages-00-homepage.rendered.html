@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Code Breakers</title>
+		<title>Code Names React</title>
 
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,8 +23,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1532382639701" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1532382639701" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1532462781058" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1532462781058" media="all" />
 
    	 	<!-- End Pattern Lab -->
 
@@ -32,11 +32,30 @@
 	<body class="">
 	<a class="is-vishidden" href="#main-content">Skip to main content</a>
 <header class="site-header" role="banner">
-	<a href="#" class="logo-link">
-	Code Breakers
-</a>
+	<div class="shim">
+		<div class="site-logo">
+	<a href="" class="site-logo_link">
+		<img src="../../images/logo.png" alt="Codenames" class="site-logo_image" />
+	</a>
+</div>
+		<div class="site-title">
+			<h1 class="site-title_text">Code Names/room-name</h1>
+		</div>
+		<div class="participants">
+    <img src="../../images/ico_teams.png" alt="teams" class="participants__icon" />
+    <button id="scores" class="scores button"><span class="score score--blue">8</span>-<span class="score score--red">9</span></button>
+</div>
+	</div>
 </header>
-	<ul class="board">
+<div class="action-bar">
+    <div class="shim">
+        <span class="current-turn color-red">Red's Turn</span>
+        <span class="end-current-turn"><button class="button">End Red's Turn</button></span>
+    </div>
+</div>
+<div class="board-container">
+    <div class="shim">
+        <ul class="board">
     <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
         <button class="piece__button">
             <span class="piece__label">Greece</span>
@@ -162,9 +181,14 @@
             <span class="piece__label">Atlantis</span>
         </button>
     </li>
-</ul>
+        </ul>
+    </div>
+</div>
 <footer class="site-footer" role="contentinfo">
-
+    <div class="shim">
+        <small class="copyright">&copy; Joseph Lawhorn - React Learning Project</small>
+        <button id="newGame" class="button button--new">New Game</button>
+    </div>
 </footer>
 	<!-- Begin Pattern Lab JS -->
 	<script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
@@ -204,10 +228,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1532382639701">
+<script id="pl-js-polyfill-insert-1532462781058">
   (function() {
     if (self != top) {
-      var cb = '1532382639701';
+      var cb = '1532462781058';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -217,10 +241,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1532382639701">
+<script id="pl-js-insert-1532462781058">
   (function() {
     if (self != top) {
-      var cb = '1532382639701';
+      var cb = '1532462781058';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }

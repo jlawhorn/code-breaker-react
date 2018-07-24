@@ -1,9 +1,9 @@
 {
-	"title" : "DEG UI Project",
+	"title" : "Code Names React",
 	"mainId" : "main-content",
 	"logo" : {
 		"url": "../../images/logo.png",
-		"alt": "Logo Alt"
+		"alt": "Code Names React"
 	},
 	"buttonText": "Button",
 	"video": {
@@ -75,27 +75,10 @@
 			]
 		}
 	},
-	"primaryNav": [
-		{
-			"label": "Nav Link 1",
-			"url": ""
-		},
-		{
-			"label": "Nav Link 2",
-			"url": ""
-		},
-		{
-			"label": "Nav Link 3",
-			"url": ""
-		},
-		{
-			"label": "Nav Link 4",
-			"url": ""
-		}
-	],
-	"description" : "So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.",
-	"blockquote": "A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.",
-	"url" : "#",
+	"showCompontentsList": false,
+	"newGameModal": false,
+	"winner": null,
+	"roomName": "room-name",
 	"piece" : {
 		"word": "Greece",
 		"viewer": "player",
@@ -329,5 +312,53 @@
 				"disabled": false
 			}
 		}
-	]
+	],
+	"participants": [
+		{
+			"participant" : {
+				"name": "Joe",
+				"team": "red",
+				"position": "Master"
+			}
+		},
+		{
+			"participant" : {
+				"name": "Ryan",
+				"team": "red",
+				"position": "Player"
+			}
+		},
+		{
+			"participant" : {
+				"name": "Andy",
+				"team": "red",
+				"position": "Player"
+			}
+		},
+		{
+			"participant" : {
+				"name": "Aaron",
+				"team": "blue",
+				"position": "Master"
+			}
+		},
+		{
+			"participant" : {
+				"name": "Brian",
+				"team": "blue",
+				"position": "Player"
+			}
+		},
+		{
+			"participant" : {
+				"name": "Jeff McLongName Test",
+				"team": "blue",
+				"position": "Player"
+			}
+		}
+	],
+	"score": {
+		"red": 1,
+		"blue": 3
+	}
 }

@@ -1,3 +1,34 @@
 .site-header {
-	
+    padding: 0.5rem 0.25rem 1rem 0.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-gray-30);
+    background-color: var(--color-gray-50);
+    .shim {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.site-title_text {
+    font-size: 1rem;
+}
+
+.site-logo {
+    margin-right: 1rem;
+}
+
+.site-logo_image {
+    width: 2.5rem;
+}
+
+@media (--small) {
+    .site-title_text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (--medium) {
+    .site-title_text {
+        font-size: 1.75rem;
+    }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>DEG UI Project</title>
+		<title>Code Names React</title>
 
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,8 +23,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1532382639701" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1532382639701" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1532462782791" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1532462782791" media="all" />
 
    	 	<!-- End Pattern Lab -->
 
@@ -58,7 +58,9 @@
     
   </div>
   <div class="sg-pattern-example">
-    <ul class="board">
+    <div class="board-container">
+    <div class="shim">
+        <ul class="board">
     <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
         <button class="piece__button">
             <span class="piece__label">Greece</span>
@@ -184,7 +186,9 @@
             <span class="piece__label">Atlantis</span>
         </button>
     </li>
-</ul>
+        </ul>
+    </div>
+</div>
   </div>
   <script type="text/json" id="sg-pattern-data-components-board" class="sg-pattern-data">
     
@@ -208,22 +212,134 @@
     <form class="">
         <legend>New Game</legend>
         <fieldset>
-            <label>I am a...</label>
-            <label for="playerTypePlayer"><span class="sub-label">Player</span> <input type="radio" id="playerTypePlayer" name="playerType" value="player" required="required" /></label>
-            <label for="playerTypeMaster"><span class="sub-label">Code Master</span> <input type="radio" id="playerTypeMaster" name="playerType" value="master" required="required" /></label>
+            <label for="name">I am...</label>
+            <div class="field">
+                <input type="text" placeholder="Name" required="required" id="name" name="name" maxlength="20" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <label for="playerTypePlayer">I am a...</label>
+            <div class="switch field">
+                <div class="switch__item">
+                    <input type="radio" id="playerTypePlayer" name="playerType" value="player" required="required" class="switch__input is-vishidden" />
+                    <label for="playerTypePlayer" class="switch__label"><span class="sub-label">Player</span></label>
+                </div>
+                <div class="switch__item">
+                    <input type="radio" id="playerTypeMaster" name="playerType" value="master" required="required" class="switch__input is-vishidden" />
+                    <label for="playerTypeMaster" class="switch__label"><span class="sub-label">Code Master</span></label>
+                </div>
+            </div>
         </fieldset>
 
         <fieldset>
-            <label>I am on...</label>
-            <label for="playerTeamBlue"><span class="sub-label">Blue Team</span> <input type="radio" id="playerTeamBlue" name="playerTeam" value="blue" required="required" /></label>
-            <label for="playerTeamRed"><span class="sub-label">Red Team</span> <input type="radio" id="playerTeamRed" name="playerTeam" value="red" required="required" /></label>
+            <label for="playerTeamBlue">I am on...</label>
+            <div class="switch field">
+                <div class="switch__item">
+                    <input type="radio" id="playerTeamBlue" name="playerTeam" value="blue" required="required" class="switch__input is-vishidden" />
+                    <label for="playerTeamBlue" class="switch__label"><span class="sub-label">Blue Team</span></label>
+                </div>
+                <div class="switch__item">
+                    <input type="radio" id="playerTeamRed" name="playerTeam" value="red" required="required" class="switch__input is-vishidden" />
+                    <label for="playerTeamRed" class="switch__label"><span class="sub-label">Red Team</span></label>
+                </div>
+            </div>
         </fieldset>
 
-        <input type="submit" value="Start" title="Start" class="button button--primary" />
+        <div class="field">
+            <input type="submit" value="Start" title="Start" class="button button--primary" />
+        </div>
     </form>
 </section>
   </div>
   <script type="text/json" id="sg-pattern-data-components-new-game-modal-content" class="sg-pattern-data">
+    
+  </script>
+</div><!--end .sg-pattern-->
+<div id="components-participant" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/02-components-03-game-participant&#x2F;02-components-03-game-participant.rendered.html" class="patternLink" data-patternpartial="components-participant" title="Link to Pattern">
+          Participant
+      </a>
+    </h3>
+    <div class="sg-pattern-breadcrumb"></div>
+    <a href="#" data-patternpartial="components-participant" title="View Pattern Info" id="sg-pattern-extra-toggle-components-participant" class="sg-pattern-extra-toggle"><span>&#9660;</span></a>
+  </div>
+  <div class="sg-pattern-extra" id="sg-pattern-extra-components-participant">
+    
+  </div>
+  <div class="sg-pattern-example">
+    
+  </div>
+  <script type="text/json" id="sg-pattern-data-components-participant" class="sg-pattern-data">
+    
+  </script>
+</div><!--end .sg-pattern-->
+<div id="components-participants" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/02-components-03-game-participants&#x2F;02-components-03-game-participants.rendered.html" class="patternLink" data-patternpartial="components-participants" title="Link to Pattern">
+          Participants
+      </a>
+    </h3>
+    <div class="sg-pattern-breadcrumb"></div>
+    <a href="#" data-patternpartial="components-participants" title="View Pattern Info" id="sg-pattern-extra-toggle-components-participants" class="sg-pattern-extra-toggle"><span>&#9660;</span></a>
+  </div>
+  <div class="sg-pattern-extra" id="sg-pattern-extra-components-participants">
+    
+  </div>
+  <div class="sg-pattern-example">
+    <div class="participants">
+    <img src="../../images/ico_teams.png" alt="teams" class="participants__icon" />
+    <button id="scores" class="scores button"><span class="score score--blue">3</span>-<span class="score score--red">1</span></button>
+</div>
+  </div>
+  <script type="text/json" id="sg-pattern-data-components-participants" class="sg-pattern-data">
+    
+  </script>
+</div><!--end .sg-pattern-->
+<div id="components-participants-list" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/02-components-03-game-participants-list&#x2F;02-components-03-game-participants-list.rendered.html" class="patternLink" data-patternpartial="components-participants-list" title="Link to Pattern">
+          Participants List
+      </a>
+    </h3>
+    <div class="sg-pattern-breadcrumb"></div>
+    <a href="#" data-patternpartial="components-participants-list" title="View Pattern Info" id="sg-pattern-extra-toggle-components-participants-list" class="sg-pattern-extra-toggle"><span>&#9660;</span></a>
+  </div>
+  <div class="sg-pattern-extra" id="sg-pattern-extra-components-participants-list">
+    
+  </div>
+  <div class="sg-pattern-example">
+    <ul class="participants-list">
+    <li class="participant color-red">
+        <span class="participant__name">Joe</span> -
+        <span class="participant__position">Master</span>
+    </li>
+    <li class="participant color-red">
+        <span class="participant__name">Ryan</span> -
+        <span class="participant__position">Player</span>
+    </li>
+    <li class="participant color-red">
+        <span class="participant__name">Andy</span> -
+        <span class="participant__position">Player</span>
+    </li>
+    <li class="participant color-blue">
+        <span class="participant__name">Aaron</span> -
+        <span class="participant__position">Master</span>
+    </li>
+    <li class="participant color-blue">
+        <span class="participant__name">Brian</span> -
+        <span class="participant__position">Player</span>
+    </li>
+    <li class="participant color-blue">
+        <span class="participant__name">Jeff McLongName Test</span> -
+        <span class="participant__position">Player</span>
+    </li>
+</ul>
+  </div>
+  <script type="text/json" id="sg-pattern-data-components-participants-list" class="sg-pattern-data">
     
   </script>
 </div><!--end .sg-pattern-->
@@ -241,7 +357,7 @@
     
   </div>
   <div class="sg-pattern-example">
-        <li class="piece piece--state-default piece--owner-blue-master piece--viewer-player">
+        <li class="piece piece--state-default piece--owner-neutral piece--viewer-player">
         <button class="piece__button">
             <span class="piece__label">Greece</span>
         </button>
@@ -294,10 +410,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1532382639701">
+<script id="pl-js-polyfill-insert-1532462782791">
   (function() {
     if (self != top) {
-      var cb = '1532382639701';
+      var cb = '1532462782791';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -307,10 +423,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1532382639701">
+<script id="pl-js-insert-1532462782791">
   (function() {
     if (self != top) {
-      var cb = '1532382639701';
+      var cb = '1532462782791';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
