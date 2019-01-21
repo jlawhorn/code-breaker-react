@@ -55,8 +55,7 @@ module.exports = {
                 include: 'node_modules/**',
                 namedExports: {
 					'node_modules/react/index.js': ['Component', 'PureComponent', 'Fragment', 'Children', 'createElement'],
-                    'node_modules/react-dom/index.js': ['render'],
-                    'node_modules/redux-logger/dist/redux-logger.js': ['createLogger']
+                    'node_modules/react-dom/index.js': ['render']
 				}
             })
         ]
