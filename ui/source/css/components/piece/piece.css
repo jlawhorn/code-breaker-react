@@ -1,0 +1,7 @@
+.piece {
+    padding: 1rem;
+    min-height: 3rem;
+    &:focus {
+        outline: 0;
+    }
+}

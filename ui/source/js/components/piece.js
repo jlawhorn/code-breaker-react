@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Piece extends React.Component {
-	render() {
-		return (
-			<button type="button" className="piece" onClick={() => alert('click')}>
-				{this.props.value}
-			</button>
-		);
-	}
+function Piece(props) {
+	return (
+	  	<button
+			className="piece"
+			onClick={props.onClick}
+		>
+			{props.value}
+		</button>
+	);
 }
 
 export default Piece;

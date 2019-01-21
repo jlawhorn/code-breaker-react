@@ -2,14 +2,16 @@ import React, {Component} from 'react';
 import Piece from './piece.js';
 
 class Board extends React.Component {
-    renderPiece(i) {
-        return <Piece value={i} />;
-    }
 
-    render() {
-        const status = 'Next player: X';
+	renderPiece(i) {
+		return <Piece
+			value={this.props.pieces[i]}
+			onClick={() => this.props.onClick(i)}
+		/>;
+	}
 
-        return (
+	render() {
+		return (
 			<div className="board">
 			<div className="status">{status}</div>
 				<div className="grid">
@@ -24,8 +26,8 @@ class Board extends React.Component {
 					{this.renderPiece(8)}
 				</div>
 			</div>
-        );
-    }
+		);
+	}
 }
 
 export default Board;
