@@ -1,9 +1,0 @@
-.action-bar {
-    padding: 1rem 0;
-    margin: 0 0 1rem 0;
-    .shim {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-}
