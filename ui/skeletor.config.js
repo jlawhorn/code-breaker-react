@@ -1,6 +1,12 @@
 module.exports = {
 	tasks: [
 		{
+			name: 'install',
+			subTasks: [
+				require('./skeletor/install/patterns.config.js')
+			]
+		},
+		{
 			name: 'build',
 			subTasks: [
 				require('./skeletor/build/patterns.config.js'),
