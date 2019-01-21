@@ -11,7 +11,8 @@ class Board extends React.Component {
 
         return (
 			<div className="board">
-				<div className="status">{status}</div>
+			<div className="status">{status}</div>
+				<div className="grid">
 					{this.renderPiece(0)}
 					{this.renderPiece(1)}
 					{this.renderPiece(2)}
@@ -21,6 +22,7 @@ class Board extends React.Component {
 					{this.renderPiece(6)}
 					{this.renderPiece(7)}
 					{this.renderPiece(8)}
+				</div>
 			</div>
         );
     }
