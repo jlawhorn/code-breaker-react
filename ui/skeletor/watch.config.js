@@ -2,12 +2,12 @@ module.exports = {
 	name: "watch",
 	plugins: [
 		{
-			"name": "@deg-skeletor/plugin-watch",
-			"config": {
+			name: "@deg-skeletor/plugin-watch",
+			config: {
 				targets: [
 					{
 						name: "css",
-						paths: "source/css/*.css",
+						paths: "source/css/**/*.css",
 						events: ['add', 'change', 'delete'],
 						tasks: [
 							{
@@ -17,19 +17,8 @@ module.exports = {
 						]
 					},
 					{
-						name: "js",
-						paths: "source/js/*.js",
-						events: ['add', 'change', 'delete'],
-						tasks: [
-							{
-								name: "build",
-								subTasks: ["js"]
-							}
-						]
-					},
-					{
 						name: "patterns",
-						paths: ["source/_patterns/**/*","source/_data/**/*","source/_meta/**/*","source/_annotations/**/*"],
+						paths: ["source/_patterns/**/*.*", "source/_data/**/*.json", "source/_meta/**/*.*", "source/_annotations/**/*.*"],
 						events: ['add', 'change', 'delete'],
 						tasks: [
 							{
@@ -39,13 +28,24 @@ module.exports = {
 						]
 					},
 					{
-						name: "static",
-						paths: ["source/fonts/**/*", "source/images/**/*"],
+						name: "images",
+						paths: "source/images/**/*",
 						events: ['add', 'change', 'delete'],
 						tasks: [
 							{
 								name: "build",
-								subTasks: ["static"]
+								subTasks: ["images"]
+							}
+						]
+					},
+					{
+						name: "js",
+						paths: "source/js/**/*",
+						events: ['add', 'change', 'delete'],
+						tasks: [
+							{
+								name: "build",
+								subTasks: ["js"]
 							}
 						]
 					}
