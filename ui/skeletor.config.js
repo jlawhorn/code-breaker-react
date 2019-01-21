@@ -1,20 +1,28 @@
 module.exports = {
 	tasks: [
 		{
+			name: 'install',
+			subTasks: [
+				require('./skeletor/install/patterns.config.js')
+			]
+		},
+		{
 			name: 'build',
 			subTasks: [
-				require('./skeletor/build/patterns.config.js'),
 				require('./skeletor/build/css.config.js'),
-				require('./skeletor/build/js.config.js'),
-				require('./skeletor/build/static.config.js')
+				require('./skeletor/build/images.config.js'),
+				require('./skeletor/build/patterns.config.js'),
+				require('./skeletor/build/js.config.js')
 			]
 		},
 		{
 			name: 'export',
+			environment: 'production',
 			subTasks: [
 				require('./skeletor/export/css.config.js'),
-				require('./skeletor/export/js.config.js'),
-				require('./skeletor/export/static.config.js')
+				require('./skeletor/export/images.config.js'),
+				require('./skeletor/export/patterns.config.js'),
+				require('./skeletor/export/js.config.js')
 			]
 		},
 		{
@@ -29,6 +37,5 @@ module.exports = {
 				require('./skeletor/watch.config.js')
 			]
 		}
-
 	]
 }

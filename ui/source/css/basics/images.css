@@ -1,4 +1,6 @@
-.align-left, .align-right, .align-center {
+.align-left,
+.align-right,
+.align-center {
 	margin: 0 auto 1.5em auto;
 }
 

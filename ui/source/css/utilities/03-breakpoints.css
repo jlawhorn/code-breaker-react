@@ -4,17 +4,13 @@ body:before {
 }
 
 @media (--medium) {
-
 	body:before {
 		content: "medium";
 	}
-
 }
 
 @media (--large) {
-
 	body:before {
 		content: "large";
 	}
-
 }

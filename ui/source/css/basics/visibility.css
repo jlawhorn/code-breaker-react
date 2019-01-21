@@ -1,10 +1,10 @@
 .is-vishidden {
 	position: absolute;
-  	overflow: hidden;
+	overflow: hidden;
+	padding: 0;
+	margin: -1px;
   	clip: rect(0 0 0 0);
   	height: 1px;
   	width: 1px;
-  	margin: -1px;
-  	padding: 0;
   	border: 0;
 }

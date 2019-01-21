@@ -1,11 +1,30 @@
 {
-	"title" : "Code Names React",
+	"title" : "DEG UI Project",
 	"mainId" : "main-content",
+	"primaryColors": [
+		{
+			"code": "#000000",
+			"name": "Black"
+		},
+		{
+			"code": "#FFFFFF",
+			"name": "White"
+		}
+	],
+	"secondaryColors": [
+		{
+			"code": "#999999",
+			"name": "Gray"
+		}
+	],
 	"logo" : {
-		"url": "../../images/logo.png",
-		"alt": "Code Names React"
+		"url": "",
+		"alt": "Logo Alt"
 	},
-	"buttonText": "Button",
+	"button": {
+		"content": "Button",
+		"type": "button"
+	},
 	"video": {
 		"videoID": "5le9sYdYkM"
 	},
@@ -41,324 +60,26 @@
 			}
 		]
 	},
-	"field": {
-		"id": "field",
-		"isInvalid": false,
-		"label": {
-			"content": "Label"
-		},
-		"input": {
-			"type": "text",
-			"placeholder": "Placeholder Text",
-			"isRequired": true,
-			"attributes": []
-		},
-		"textarea": {
-			"placeholder": "Placeholder Text",
-			"isRequired": true
-		},
-		"select": {
-			"isRequired": true,
-			"options": [
-				{
-					"label": "Option 1",
-					"value": "1"
-				},
-				{
-					"label": "Option 2",
-					"value": "2"
-				},
-				{
-					"label": "Option 2",
-					"value": "3"
-				}
-			]
-		}
-	},
-	"showCompontentsList": false,
-	"newGameModal": false,
-	"winner": null,
-	"roomName": "room-name",
-	"piece" : {
-		"word": "Greece",
-		"viewer": "player",
-		"owner": "neutral",
-		"state": "default",
-		"disabled": false
-	},
-	"pieceList" : [
+	"field": {},
+	"primaryNav": [
 		{
-			"piece": {
-				"word": "Greece",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
+			"label": "",
+			"url": ""
 		},
 		{
-			"piece": {
-				"word": "Shop",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "selected",
-				"disabled": true
-			}
+			"label": "",
+			"url": ""
 		},
 		{
-			"piece": {
-				"word": "Bridge",
-				"viewer": "player",
-				"owner": "blue",
-				"state":  "selected",
-				"disabled": true
-			}
+			"label": "",
+			"url": ""
 		},
 		{
-			"piece": {
-				"word": "Tail",
-				"viewer": "player",
-				"owner": "red",
-				"state":  "selected",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Pole",
-				"viewer": "player",
-				"owner": "black",
-				"state":  "selected",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Post",
-				"viewer": "master",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Stick",
-				"viewer": "master",
-				"owner": "blue",
-				"state":  "default",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Triangle",
-				"viewer": "master",
-				"owner": "red",
-				"state":  "default",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Spider",
-				"viewer": "master",
-				"owner": "black",
-				"state":  "default"
-		,		"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Giant",
-				"viewer": "master",
-				"owner": "neutral",
-				"state":  "selected",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Mint",
-				"viewer": "master",
-				"owner": "blue",
-				"state":  "selected",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Dragon",
-				"viewer": "player",
-				"owner": "red",
-				"state":  "selected",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Gold",
-				"viewer": "master",
-				"owner": "black",
-				"state":  "selected",
-				"disabled": true
-			}
-		},
-		{
-			"piece": {
-				"word": "Check",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Jet",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Pass",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Eye",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Sub",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Deck",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Pirate",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Plane",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Orange",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Log",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Court",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
-		},
-		{
-			"piece": {
-				"word": "Atlantis",
-				"viewer": "player",
-				"owner": "neutral",
-				"state":  "default",
-				"disabled": false
-			}
+			"label": "",
+			"url": ""
 		}
 	],
-	"participants": [
-		{
-			"participant" : {
-				"name": "Joe",
-				"team": "red",
-				"position": "Master"
-			}
-		},
-		{
-			"participant" : {
-				"name": "Ryan",
-				"team": "red",
-				"position": "Player"
-			}
-		},
-		{
-			"participant" : {
-				"name": "Andy",
-				"team": "red",
-				"position": "Player"
-			}
-		},
-		{
-			"participant" : {
-				"name": "Aaron",
-				"team": "blue",
-				"position": "Master"
-			}
-		},
-		{
-			"participant" : {
-				"name": "Brian",
-				"team": "blue",
-				"position": "Player"
-			}
-		},
-		{
-			"participant" : {
-				"name": "Jeff McLongName Test",
-				"team": "blue",
-				"position": "Player"
-			}
-		}
-	],
-	"score": {
-		"red": 1,
-		"blue": 3
-	}
+	"description" : "So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.",
+	"blockquote": "A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.",
+	"url" : "#"
 }

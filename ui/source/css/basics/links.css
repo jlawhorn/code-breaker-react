@@ -1,5 +1,5 @@
 a {
-	&:hover {
+	&:hover, &:focus {
 
 	}
 

@@ -1,1 +1,8 @@
-<a class="button {{ buttonClass }}" href="{{ url }}">{{ buttonText }}</a>
+{{# button }}
+    <button 
+        type="{{ type }}" 
+        class="button {{# isAlt }}button--alt{{/ isAlt }} {{ cssClass }}" 
+        {{# isDisabled }}disabled{{/ isDisabled }}>
+        {{ content }}
+    </button>
+{{/ button }}

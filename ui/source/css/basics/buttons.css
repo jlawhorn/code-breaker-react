@@ -1,51 +1,29 @@
-button:enabled,
-.button:enabled {
-	cursor: pointer;
-}
-
 .button {
-	margin: 0 0.5rem 0 0;
-	padding: 0.25rem 1rem;
-	font-size: 1rem;
-	font-family: var(--font-family-primary);
-	font-weight: var(--font-weight-light);
-	box-shadow: 0.25rem 0.25rem rgba(0,0,0,0.25);
-	border-radius: 0.25rem;
-    color: var(--color-gray-10);
-	transition: all 0.25s;
-	background: linear-gradient(to bottom, var(--color-gray-40) 0%, var(--color-gray-50) 100%);
-	&:enabled:hover {
-		background: linear-gradient(to top, var(--color-gray-40) 0%, var(--color-gray-50) 100%);
-	}
-    &:focus {
-        outline-color: var(--color-green-10);
-    }
-    &:active {
-        box-shadow: none;
-        outline: none;
-    }
-}
 
-.button--primary {
-	color: var(--color-white);
-	background: linear-gradient(to bottom, var(--color-blue-10) 0%, var(--color-blue-20) 100%);
-	&:enabled:hover {
-		background: linear-gradient(to top, var(--color-blue-10) 0%, var(--color-blue-20) 100%);
+	&:hover, &:focus {
+
+	}
+
+	&:active {
+
+	}
+
+	&:disabled {
+		
 	}
 }
 
-.button--secondary {
-	color: var(--color-white);
-	background: linear-gradient(to bottom, var(--color-red-10) 0%, var(--color-red-20) 100%);
-	&:enabled:hover {
-		background: linear-gradient(to top, var(--color-red-10) 0%, var(--color-red-20) 100%);
-	}
-}
+.button--alt {
 
-.button--new {
-	color: var(--color-white);
-	background: linear-gradient(to bottom, var(--color-green-10) 0%, var(--color-green-20) 100%);
-	&:enabled:hover {
-		background: linear-gradient(to top, var(--color-green-10) 0%, var(--color-green-20) 100%);
+	&:hover, &:focus {
+
+	}
+
+	&:active {
+
+	}
+
+	&:disabled {
+		
 	}
 }

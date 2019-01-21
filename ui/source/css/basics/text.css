@@ -1,23 +1,10 @@
 body {
 	color: var(--color-text);
 	font-family: var(--font-family-primary);
-	font-size: var(--base-font-size);
-	font-weight: 400;
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-normal);
 }
 
 p {
 	margin: 0 0 var(--spacing-vertical) 0;
-}
-
-legend,
-.sub-label {
-	font-weight: var(--font-weight-bold);
-}
-
-legend {
-	margin-bottom: 1rem;
-}
-
-.copyright {
-	font-size: 0.65rem;
 }
