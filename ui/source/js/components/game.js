@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import update from 'react-addons-update';
 import Board from './board.js';
 import getWordlist from '../helpers/generateWordList.js';
 import getOwnershipList from '../helpers/generateOwners.js';
@@ -34,12 +35,13 @@ class Game extends React.Component {
 	}
 
 	switchTeamsClick() {
-		console.log('switch teams');
-		this.state.isBlueTurn = !this.state.isBlueTurn;
+		this.setState({ isBlueTurn: !this.state.isBlueTurn });
 	}
 
 	pieceChosenClick(i) {
-		this.state.pieces[i].isDisabled = 1;
+		const updatedPieces = Object.assign({}, this.state.pieces);
+		updatedPieces[i].isDisabled = 1;
+		this.setState({ pieces: updatedPieces });
 	}
 
 	render() {
@@ -50,7 +52,9 @@ class Game extends React.Component {
 				<div className="game__info">
 					<div className="game__status">
 						{turnStatus}
-						<button type="button" className="button">End Turn</button>
+					</div>
+					<div className="button-set">
+						<button type="button" className="button" onClick={() => this.switchTeamsClick()}>End Turn</button>
 					</div>
 				</div>
 				<div className="game__board">
