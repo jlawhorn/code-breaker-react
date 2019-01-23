@@ -1,7 +1,61 @@
+:root {
+    --color-piece-neutral-border: rgb(35, 35, 35);
+    --color-piece-neutral-fg: var(--color-black);
+    --color-piece-neutral-bg: rgb(185, 185, 185);
+
+    --color-piece-blue-border: rgb(0, 0, 175);
+    --color-piece-blue-fg: var(--color-white);
+    --color-piece-blue-bg: rgb(70, 70, 255);
+
+    --color-piece-red-border: rgb(175, 0, 0);
+    --color-piece-red-fg: var(--color-white);
+    --color-piece-red-bg: rgb(255, 70, 70);
+
+    --color-piece-black-border: var(--color-black);
+    --color-piece-black-fg: var(--color-white);
+    --color-piece-black-bg: rgb(40, 40, 40);
+
+    --color-piece-focus-border: rgb(255, 255, 0);
+}
+
 .piece {
     padding: 1rem;
     min-height: 3rem;
-    &:focus {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: medium solid;
+    transition: all var(--anim-duration);
+    &:enabled:hover {
+        box-shadow: 0 0 0.5rem 0.5rem inset rgba(255,255,255,0.75);
+        cursor: pointer;
+    }
+    &--neutral {
+        border-color: var(--color-piece-neutral-border);
+        color: var(--color-piece-neutral-fg);
+        background-color: var(--color-piece-neutral-bg);
+    }
+    &--blue {
+        border-color: var(--color-piece-blue-border);
+        color: var(--color-piece-blue-fg);
+        background-color: var(--color-piece-blue-bg);
+    }
+    &--red {
+        border-color: var(--color-piece-red-border);
+        color: var(--color-piece-red-fg);
+        background-color: var(--color-piece-red-bg);
+    }
+    &--black {
+        border-color: var(--color-piece-black-border);
+        color: var(--color-piece-black-fg);
+        background-color: var(--color-piece-black-bg);
+    }
+    &--selected {
+        opacity: 0.5;
+    }
+    &:focus,
+    &:active {
         outline: 0;
+        border-color: var(--color-piece-focus-border);
     }
 }

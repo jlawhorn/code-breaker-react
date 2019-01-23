@@ -1,77 +1,64 @@
 import React, {Component} from 'react';
 import Board from './board.js';
+import getWordlist from '../helpers/generateWordList.js';
+import getOwnershipList from '../helpers/generateOwners.js';
 import calculateWinner from '../helpers/winner.js';
+
+const gamePiecesCount = 25;
+const blackPieceCount = 1;
+const bluePiecesCount = 9;
+const redPiecesCount = 8;
+
+function buildPieceArray() {
+	const wordArray = getWordlist(gamePiecesCount);
+	const ownershipArray = getOwnershipList(gamePiecesCount, blackPieceCount, bluePiecesCount, redPiecesCount);
+	const piecesArray = [];
+	for (let i = 0; i < gamePiecesCount; i++) {
+		const piece = {
+			word: wordArray[i],
+			owner: ownershipArray[i],
+			isDisabled: 0
+		}
+		piecesArray.push(piece);
+	}
+	return piecesArray;
+}
 
 class Game extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			history: [{
-				pieces: Array(9).fill(null)
-			}],
-			xIsNext: true,
-			stepNumber: 0
+			isBlueTurn: true,
+			pieces: buildPieceArray()
 		};
 	}
 
-	handleClick(i) {
-		const history = this.state.history.slice(0, this.state.stepNumber + 1);
-		const current = history[history.length - 1];
-		const pieces = current.pieces.slice();
-		if (calculateWinner(pieces) || pieces[i]) {
-			return;
-		}
-		pieces[i] = this.state.xIsNext ? 'X' : 'O';
-		this.setState({
-			history: history.concat([{
-				pieces: pieces
-			}]),
-			stepNumber: history.length,
-			xIsNext: !this.state.xIsNext
-		});
+	switchTeamsClick() {
+		console.log('switch teams');
+		this.state.isBlueTurn = !this.state.isBlueTurn;
 	}
 
-	jumpTo(step) {
-		this.setState({
-			stepNumber: step,
-			xIsNext: (step % 2) === 0,
-		});
+	pieceChosenClick(i) {
+		this.state.pieces[i].isDisabled = 1;
 	}
 
 	render() {
-		const history = this.state.history;
-		const current = history[this.state.stepNumber];
-		const winner = calculateWinner(current.pieces);
-
-		const moves = history.map((step, move) => {
-			const desc = move ?
-				'Go to move #' + move :
-				'Go to game start';
-			return (
-				<li key={move}>
-					<button onClick={() => this.jumpTo(move)}>{desc}</button>
-				</li>
-			);
-		});
-
-		let status;
-		if (winner) {
-			status = 'Winner: ' + winner;
-		} else {
-			status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-		}
-
+		const winner = calculateWinner(pieces);
+		const turnStatus = 'Current Team: ' + (this.state.isBlueTurn ? 'Blue' : 'Red');
 		return (
 			<div className="game">
-				<div className="game-board">
-					<Board
-						pieces={current.pieces}
-						onClick={(i) => this.handleClick(i)}
-					/>
+				<div className="game__info">
+					<div className="game__status">
+						{turnStatus}
+						<button type="button" className="button">End Turn</button>
+					</div>
 				</div>
-				<div className="game-info">
-					<div>{status}</div>
-					<ol>{moves}</ol>
+				<div className="game__board">
+					<Board
+						totalPieces={gamePiecesCount}
+						pieces={this.state.pieces}
+						onClick={(i) => this.pieceChosenClick(i)}
+					/>
 				</div>
 			</div>
 		);

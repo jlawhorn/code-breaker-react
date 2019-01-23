@@ -3,10 +3,11 @@ import React from 'react';
 function Piece(props) {
 	return (
 	  	<button
-			className="piece"
+			className={"piece piece--" + props.owner}
 			onClick={props.onClick}
+			disabled={props.isDisabled}
 		>
-			{props.value}
+			{props.word}
 		</button>
 	);
 }

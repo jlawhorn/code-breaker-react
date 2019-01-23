@@ -5,9 +5,21 @@ class Board extends React.Component {
 
 	renderPiece(i) {
 		return <Piece
-			value={this.props.pieces[i]}
-			onClick={() => this.props.onClick(i)}
+			value = {this.props.pieces[i]}
+			word = {this.props.pieces[i].word}
+			owner = {this.props.pieces[i].owner}
+			isDisabled = {this.props.pieces[i].isDisabled}
+			key = {i}
+			onClick = {() => this.props.onClick(i)}
 		/>;
+	}
+
+	renderPieces(pieceCount) {
+		let pieceList = [];
+		for (let i = 0; i < pieceCount; i++) {
+			pieceList.push(this.renderPiece(i));
+		}
+		return pieceList;
 	}
 
 	render() {
@@ -15,15 +27,7 @@ class Board extends React.Component {
 			<div className="board">
 			<div className="status">{status}</div>
 				<div className="grid">
-					{this.renderPiece(0)}
-					{this.renderPiece(1)}
-					{this.renderPiece(2)}
-					{this.renderPiece(3)}
-					{this.renderPiece(4)}
-					{this.renderPiece(5)}
-					{this.renderPiece(6)}
-					{this.renderPiece(7)}
-					{this.renderPiece(8)}
+					{this.renderPieces(this.props.totalPieces)}
 				</div>
 			</div>
 		);
