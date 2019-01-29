@@ -26,7 +26,6 @@ class Board extends React.Component {
 	render() {
 		return (
 			<div className="board">
-			<div className="status">{status}</div>
 				<div className="grid">
 					{this.renderPieces(this.props.totalPieces)}
 				</div>

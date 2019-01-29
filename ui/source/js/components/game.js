@@ -22,7 +22,7 @@ function buildPieceArray() {
 		const piece = {
 			word: wordArray[i],
 			owner: ownershipArray[i],
-			isChosen: 0
+			isChosen: false
 		}
 		piecesArray.push(piece);
 	}
@@ -51,7 +51,7 @@ class Game extends React.Component {
 	pieceChosenClick(i) {
 		const updatedPieces = Array.from(this.state.pieces);
 		const clickedPieceOwner = updatedPieces[i].owner;
-		updatedPieces[i].isChosen = 1;
+		updatedPieces[i].isChosen = true;
 		this.setState({ pieces: updatedPieces });
 		this.setState({ winner: calculateWinner(this.state.pieces, bluePiecesCount, redPiecesCount, this.state.isBlueTurn) });
 		this.setState({ isBlueTurn: switchTurns(this.state.isBlueTurn, clickedPieceOwner) });
