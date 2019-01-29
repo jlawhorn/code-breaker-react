@@ -1,5 +1,5 @@
 .site-header {
     padding: 0.25rem 1rem;
-    margin: 1rem auto;
+    margin: 0 auto 1rem auto;
     max-width: var(--width-page);
 }

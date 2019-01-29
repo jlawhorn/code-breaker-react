@@ -12,6 +12,13 @@
 	--color-button-alt-gray: rgb(150,115,115);
 }
 
+button,
+input[type="button"],
+.button {
+	font-family: var(--font-family-primary);
+	letter-spacing: 2px;
+}
+
 input[type="button"],
 .button {
 	display: inline-block;

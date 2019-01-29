@@ -1,7 +1,8 @@
 .site-footer {
     padding: 0.25rem 1rem;
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto;
     max-width: var(--width-page);
     font-size: 0.75rem;
+    font-weight: var(--font-weight-light);
     text-align: right;
 }

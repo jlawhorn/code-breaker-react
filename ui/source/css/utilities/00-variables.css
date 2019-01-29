@@ -4,9 +4,11 @@
 
 	--color-text: var(--color-black);
 
-	--font-family-primary: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	--font-family-primary: 'Montserrat', sans-serif;
 	--font-size-base: 1rem;
+	--font-weight-light: 300;
 	--font-weight-normal: 400;
+	--font-weight-bold: 800;
 
 	--width-page: 80rem;
 	--width-gutter: 1rem;
