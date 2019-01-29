@@ -1,37 +1,35 @@
 import React, {Component} from 'react';
 import Piece from './piece.js';
 
-class Board extends React.Component {
+function Board(props) {
 
-	renderPiece(i) {
+	function renderPiece(i) {
 		return <Piece
-			viewer = {this.props.viewer}
-			value = {this.props.pieces[i]}
-			word = {this.props.pieces[i].word}
-			owner = {this.props.pieces[i].owner}
-			isChosen = {this.props.pieces[i].isChosen}
+			viewer = {props.viewer}
+			value = {props.pieces[i]}
+			word = {props.pieces[i].word}
+			owner = {props.pieces[i].owner}
+			isChosen = {props.pieces[i].isChosen}
 			key = {i}
-			onClick = {() => this.props.onClick(i)}
+			onClick = {() => props.onClick(i)}
 		/>;
 	}
 
-	renderPieces(pieceCount) {
+	function renderPieces(pieceCount) {
 		let pieceList = [];
 		for (let i = 0; i < pieceCount; i++) {
-			pieceList.push(this.renderPiece(i));
+			pieceList.push(renderPiece(i));
 		}
 		return pieceList;
 	}
 
-	render() {
-		return (
-			<div className="board">
-				<div className="grid">
-					{this.renderPieces(this.props.totalPieces)}
-				</div>
+	return (
+		<div className="board">
+			<div className="grid">
+				{renderPieces(props.totalPieces)}
 			</div>
-		);
-	}
+		</div>
+	);
 }
 
 export default Board;
