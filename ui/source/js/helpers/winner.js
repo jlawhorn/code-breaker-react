@@ -1,6 +1,6 @@
 function calculateWinner(pieces, bluePieces, redPieces, isBlueTurn) {
 
-	const chosenSquares = pieces.filter(piece => piece.isChosen === 1);
+	const chosenSquares = pieces.filter(piece => piece.isChosen === true);
 	const chosenBlackSquares = chosenSquares.filter(piece => piece.owner === 'black');
 	const chosenBlueSquares = chosenSquares.filter(piece => piece.owner === 'blue');
 	const chosenRedSquares = chosenSquares.filter(piece => piece.owner === 'red');
