@@ -19,15 +19,16 @@
 }
 
 .piece {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     min-height: 3rem;
     font-size: 1.1rem;
     font-weight: bold;
     text-transform: uppercase;
+    box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.25);
     border: medium solid;
     transition: all var(--anim-duration);
     &:enabled:hover {
-        box-shadow: 0 0 0.5rem 0.5rem inset rgba(255,255,255,0.75);
+        box-shadow: 0 0 0.5rem 0.5rem inset rgba(255,255,255,0.25);
         cursor: pointer;
     }
     &--neutral {

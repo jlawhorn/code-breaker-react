@@ -5,10 +5,11 @@ class Board extends React.Component {
 
 	renderPiece(i) {
 		return <Piece
+			viewer = {this.props.viewer}
 			value = {this.props.pieces[i]}
 			word = {this.props.pieces[i].word}
 			owner = {this.props.pieces[i].owner}
-			isDisabled = {this.props.pieces[i].isDisabled}
+			isChosen = {this.props.pieces[i].isChosen}
 			key = {i}
 			onClick = {() => this.props.onClick(i)}
 		/>;

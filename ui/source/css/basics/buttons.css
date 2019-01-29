@@ -1,29 +1,60 @@
+:root {
+	--color-button-fg: rgb(255,255,255);;
+	--color-button-bg: rgb(15,90,190);
+	--color-button-dark: rgb(20,70,140);
+	--color-button-light: rgb(120,175,245);
+	--color-button-gray: rgb(120,135,155);
+
+	--color-button-alt-fg: rgb(255,255,255);
+	--color-button-alt-bg: rgb(190,15,15);
+	--color-button-alt-dark: rgb(100,30,30);
+	--color-button-alt-light: rgb(255,45,45);
+	--color-button-alt-gray: rgb(150,115,115);
+}
+
+input[type="button"],
 .button {
-
-	&:hover, &:focus {
-
+	display: inline-block;
+	appearance: none;
+	padding: 0.5rem 0.75rem;
+	font-size: 1rem;
+	box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.15);
+	border: 0;
+	border-radius: var(--border-radius);
+	color: var(--color-button-fg);
+	background-color: var(--color-button-bg);
+	cursor: pointer;
+	transition: box-shadow var(--anim-duration);
+	&:hover,
+	&:focus {
+		background-color: var(--color-button-light);
+		box-shadow: 0 0.25rem 0.15rem 0 rgba(0,0,0,0.5);
 	}
-
 	&:active {
-
+		background-color: var(--color-button-dark);
 	}
-
 	&:disabled {
-		
+		background-color: var(--color-button-gray);
 	}
 }
 
 .button--alt {
-
-	&:hover, &:focus {
-
+	color: var(--color-button-alt-fg);
+	background-color: var(--color-button-alt-bg);
+		&:hover,
+	&:focus {
+		background-color: var(--color-button-alt-light);
 	}
-
 	&:active {
-
+		background-color: var(--color-button-alt-dark);
 	}
-
 	&:disabled {
-		
+		background-color: var(--color-button-alt-gray);
+	}
+}
+
+.button-set {
+	& > * {
+		margin-left: 1rem;
 	}
 }
