@@ -2,7 +2,7 @@ import React from 'react';
 
 function Controls(props) {
 
-    function setViewerState(viewerId, controlId) {
+    function getViewerState(viewerId, controlId) {
         return viewerId === controlId;
     }
 
@@ -26,7 +26,7 @@ function Controls(props) {
                                 type="radio"
                                 name="viewer"
                                 id="viewAsMaster"
-                                defaultChecked={setViewerState(props.viewer, 0)}
+                                defaultChecked={getViewerState(props.viewer, 0)}
                                 onClick={props.onClickViewMaster}
                             />
                             <label htmlFor="viewAsMaster">Master</label>
@@ -36,7 +36,7 @@ function Controls(props) {
                                 type="radio"
                                 name="viewer"
                                 id="viewAsBlue"
-                                defaultChecked={setViewerState(props.viewer, 1)}
+                                defaultChecked={getViewerState(props.viewer, 1)}
                                 onClick={props.onClickViewBlue}
                             />
                             <label htmlFor="viewAsBlue">Blue Player</label>
@@ -46,7 +46,7 @@ function Controls(props) {
                                 type="radio"
                                 name="viewer"
                                 id="viewAsRed"
-                                defaultChecked={setViewerState(props.viewer, 2)}
+                                defaultChecked={getViewerState(props.viewer, 2)}
                                 onClick={props.onClickViewRed}
                             />
                             <label htmlFor="viewAsRed">Red Player</label>
