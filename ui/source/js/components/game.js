@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import update from 'react-addons-update';
 import Board from './board.js';
-import capitalizeFirstLetter from '../helpers/stringFunctions.js';
+import Stats from './stats.js';
+import Controls from './controls.js';
 import getWordlist from '../helpers/generateWordList.js';
 import getOwnershipList from '../helpers/generateOwners.js';
 import switchTurns from '../helpers/switchTurns.js';
+import keepScore from '../helpers/keepScore.js';
 import calculateWinner from '../helpers/winner.js';
 
 const gamePiecesCount = 25;
@@ -34,6 +35,11 @@ class Game extends React.Component {
 		super(props);
 		this.state = {
 			isBlueTurn: true,
+			score: {
+				black: blackPieceCount,
+				blue: bluePiecesCount,
+				red: redPiecesCount
+			},
 			pieces: buildPieceArray(),
 			viewer: 0,
 			winner: null
@@ -49,21 +55,23 @@ class Game extends React.Component {
 	}
 
 	pieceChosenClick(i) {
-		const updatedPieces = Array.from(this.state.pieces);
-		const clickedPieceOwner = updatedPieces[i].owner;
-		updatedPieces[i].isChosen = true;
-		this.setState({ pieces: updatedPieces });
-		this.setState({ winner: calculateWinner(this.state.pieces, bluePiecesCount, redPiecesCount, this.state.isBlueTurn) });
-		this.setState({ isBlueTurn: switchTurns(this.state.isBlueTurn, clickedPieceOwner) });
-	}
-
-	getStatus(winner) {
-		if (winner === null) {
-			return 'Current Turn: ' + (this.state.isBlueTurn ? 'Blue' : 'Red');
+		if (this.state.winner === null) {
+			const updatedPieces = Array.from(this.state.pieces);
+			const clickedPieceOwner = updatedPieces[i].owner;
+			updatedPieces[i].isChosen = true;
+			const newScore = keepScore(updatedPieces, blackPieceCount, bluePiecesCount, redPiecesCount);
+			const newWinner = calculateWinner(newScore, this.state.isBlueTurn);
+			this.setState({
+				score: newScore,
+				pieces: updatedPieces,
+				winner: newWinner,
+				isBlueTurn: switchTurns(this.state.isBlueTurn, clickedPieceOwner)
+			});
+			if (newWinner !== null) {
+				this.endGame(newWinner);
+			}
 		}
-		winner = capitalizeFirstLetter(winner);
-		this.endGame();
-		return `${winner} team is the winner.`;
+		return false;
 	}
 
 	promptNewGame() {
@@ -73,37 +81,46 @@ class Game extends React.Component {
 	}
 
 	newGame() {
-		console.log('start game');
+		this.setState({
+			winner: null,
+			isBlueTurn: true,
+			pieces: buildPieceArray()
+		});
 	}
 
 	endGame() {
-		console.log('end game');
+		const updatedPieces = Array.from(this.state.pieces);
+		updatedPieces.forEach(piece => piece.isChosen = true);
+		this.setState({ pieces: updatedPieces });
 	}
 
 	render() {
-		const turnStatus = this.getStatus(this.state.winner);
 		return (
 			<div className="game">
-				<div className="game__info">
-					<div className="game__status">
-						{turnStatus}
-					</div>
-					<div className="button-set">
-						<button type="button" className="button" onClick={() => this.switchTeamsClick()}>End Turn</button>
-						<button type="button" className="button" onClick={() => this.setViewer(0)}>View as Master</button>
-						<button type="button" className="button" onClick={() => this.setViewer(1)}>View as Blue Player</button>
-						<button type="button" className="button" onClick={() => this.setViewer(2)}>View as Red Player</button>
-						<button type="button" className="button button--alt" onClick={() => this.promptNewGame()}>New Game</button>
-					</div>
-				</div>
+				<Stats
+					isBlueTurn={this.state.isBlueTurn}
+					winner={this.state.winner}
+					viewer={this.state.viewer}
+					score={this.state.score}
+				/>
 				<div className="game__board">
 					<Board
 						totalPieces={gamePiecesCount}
 						pieces={this.state.pieces}
 						viewer={this.state.viewer}
+						winner={this.state.winner}
 						onClick={(i) => this.pieceChosenClick(i)}
 					/>
 				</div>
+				<Controls
+					viewer={this.state.viewer}
+					winner={this.state.winner}
+					onClickSwitchTeams={() => this.switchTeamsClick()}
+					onClickViewMaster={() => this.setViewer(0)}
+					onClickViewBlue={() => this.setViewer(1)}
+					onClickViewRed={() => this.setViewer(2)}
+					onClickPromptNewGame={() => this.promptNewGame()}
+				/>
 			</div>
 		);
 	}

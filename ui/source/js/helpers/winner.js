@@ -1,19 +1,16 @@
-function calculateWinner(pieces, bluePieces, redPieces, isBlueTurn) {
+function calculateWinner(score, isBlueTurn) {
 
-	const chosenSquares = pieces.filter(piece => piece.isChosen === true);
-	const chosenBlackSquares = chosenSquares.filter(piece => piece.owner === 'black');
-	const chosenBlueSquares = chosenSquares.filter(piece => piece.owner === 'blue');
-	const chosenRedSquares = chosenSquares.filter(piece => piece.owner === 'red');
+	console.log(score);
 
-	if (chosenBlackSquares.length > 0) {
+	if (score.black === 0) {
 		if (isBlueTurn) {
 			return 'red';
 		} else {
 			return 'blue';
 		}
-	} else if (chosenBlueSquares.length === bluePieces) {
+	} else if (score.blue === 0) {
 		return 'blue';
-	} else if (chosenRedSquares.length === redPieces) {
+	} else if (score.black === 0) {
 		return 'red';
 	}
 

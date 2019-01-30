@@ -1,0 +1,11 @@
+.control-set {
+    legend {
+        font-size: 0.8rem;
+        font-weight: var(--font-weight-light);
+    }
+}
+
+.switchItem {
+    margin: 0.25rem 0 0.75rem 0;
+    font-size: 0.9rem;
+}

@@ -30,7 +30,6 @@ input[type="button"],
 	border-radius: var(--border-radius);
 	color: var(--color-button-fg);
 	background-color: var(--color-button-bg);
-	cursor: pointer;
 	transition: box-shadow var(--anim-duration);
 	&:hover,
 	&:focus {
@@ -40,8 +39,12 @@ input[type="button"],
 	&:active {
 		background-color: var(--color-button-dark);
 	}
+	&:enabled {
+		cursor: pointer;
+	}
 	&:disabled {
 		background-color: var(--color-button-gray);
+		cursor: not-allowed;
 	}
 }
 
@@ -61,7 +64,22 @@ input[type="button"],
 }
 
 .button-set {
+	display: flex;
 	& > * {
-		margin-left: 1rem;
+		& + * {
+			margin: 0 0 0 1rem;
+		}
+	}
+}
+
+@media (--large) {
+	.button-set {
+		flex-direction: column;
+		& > * {
+			margin: 0;
+			& + * {
+				margin: 1rem 0 0 0;
+			}
+		}
 	}
 }

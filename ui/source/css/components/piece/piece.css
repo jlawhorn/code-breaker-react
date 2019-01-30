@@ -21,7 +21,7 @@
 .piece {
     padding: 1rem 1.5rem;
     min-height: 3rem;
-    font-size: 1.1rem;
+    font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
     box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.25);
@@ -58,5 +58,17 @@
     &:active {
         outline: 0;
         border-color: var(--color-piece-focus-border);
+    }
+}
+
+@media (--large) {
+    .piece {
+        font-size: 0.8rem;
+    }
+}
+
+@media (--extra-large) {
+    .piece {
+        font-size: 1.1rem;
     }
 }

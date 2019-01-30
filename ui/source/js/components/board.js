@@ -20,7 +20,7 @@ function Board(props) {
 	}
 
 	return (
-		<div className="board">
+		<div className={"board winner--" + props.winner}>
 			<div className="grid">
 				{renderPieces(props.totalPieces)}
 			</div>

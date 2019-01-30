@@ -2,6 +2,9 @@
 	--color-black: #000;
 	--color-white: #fff;
 
+	--color-team-blue: rgb(0,0,255);
+	--color-team-red: rgb(255,0,0);
+
 	--color-text: var(--color-black);
 
 	--font-family-primary: 'Montserrat', sans-serif;
@@ -23,5 +26,6 @@
 }
 
 @custom-media --small (min-width: 30em);
-@custom-media --medium (min-width: 48em);
-@custom-media --large (min-width: 64em);
+@custom-media --medium (min-width: 50em);
+@custom-media --large (min-width: 70em);
+@custom-media --extra-large (min-width: 75em);
