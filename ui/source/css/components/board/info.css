@@ -1,0 +1,8 @@
+.game__info {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.game__status {
+    margin-right: 1rem;
+}

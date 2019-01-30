@@ -1,0 +1,30 @@
+.board-container {
+    padding: 0.25rem 1rem;
+    margin: 0 auto;
+}
+
+.winner--red,
+.winner--blue {
+    opacity: 0.75;
+    .piece:disabled {
+        opacity: 1;
+    }
+}
+
+.winner--red {
+    .piece {
+        border: 2px dashed rgb(255,0,0);
+    }
+}
+
+.winner--blue {
+    .piece {
+        border: 2px dashed rgb(0,0,255);
+    }
+}
+
+@media (--large) {
+    .board-container {
+        max-width: calc(100% - 22rem);
+    }
+}

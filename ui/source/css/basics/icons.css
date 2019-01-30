@@ -1,3 +1,13 @@
 .icon {
-
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    transition: transform var(--anim-duration-fast) var(--anim-easing);
+    svg {
+        max-width: 100%;
+        max-height: 100%;
+    }
 }

@@ -1,0 +1,28 @@
+.status-list__item {
+    font-weight: var(--font-weight-bold);
+    & + & {
+        display: block;
+        margin-top: 1rem;
+    }
+    &--master {
+        color: var(--color-text);
+    }
+    &--blue {
+        color: var(--color-team-blue);
+    }
+    &--red {
+        color: var(--color-team-red);
+    }
+}
+
+.team--blue {
+    color: var(--color-team-blue);
+}
+
+.team--red {
+    color: var(--color-team-red);
+}
+
+.text-outline {
+    text-shadow: 1px 1px 0 rgba(255,255,255,1), 1px 1px 0 rgba(0,0,0,1);
+}

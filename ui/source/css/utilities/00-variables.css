@@ -2,11 +2,16 @@
 	--color-black: #000;
 	--color-white: #fff;
 
+	--color-team-blue: rgb(0,0,255);
+	--color-team-red: rgb(255,0,0);
+
 	--color-text: var(--color-black);
 
-	--font-family-primary: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	--font-family-primary: 'Montserrat', sans-serif;
 	--font-size-base: 1rem;
+	--font-weight-light: 300;
 	--font-weight-normal: 400;
+	--font-weight-bold: 800;
 
 	--width-page: 80rem;
 	--width-gutter: 1rem;
@@ -21,5 +26,6 @@
 }
 
 @custom-media --small (min-width: 30em);
-@custom-media --medium (min-width: 48em);
-@custom-media --large (min-width: 64em);
+@custom-media --medium (min-width: 50em);
+@custom-media --large (min-width: 70em);
+@custom-media --extra-large (min-width: 75em);

@@ -1,78 +1,125 @@
 import React, {Component} from 'react';
 import Board from './board.js';
+import Stats from './stats.js';
+import Controls from './controls.js';
+import getWordlist from '../helpers/generateWordList.js';
+import getOwnershipList from '../helpers/generateOwners.js';
+import generateTeams from '../helpers/teams.js';
+import switchTurns from '../helpers/switchTurns.js';
+import keepScore from '../helpers/keepScore.js';
 import calculateWinner from '../helpers/winner.js';
+
+const gamePiecesCount = 25;
+const blackPieceCount = 1;
+const bluePiecesCount = 9;
+const redPiecesCount = 8;
+
+const strResetGame = 'Start a new game?';
+
+function buildPieceArray() {
+	const wordArray = getWordlist(gamePiecesCount);
+	const ownershipArray = getOwnershipList(gamePiecesCount, blackPieceCount, bluePiecesCount, redPiecesCount);
+	const piecesArray = [];
+	for (let i = 0; i < gamePiecesCount; i++) {
+		const piece = {
+			word: wordArray[i],
+			owner: ownershipArray[i],
+			isChosen: false
+		}
+		piecesArray.push(piece);
+	}
+	return piecesArray;
+}
 
 class Game extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			history: [{
-				pieces: Array(9).fill(null)
-			}],
-			xIsNext: true,
-			stepNumber: 0
+			isBlueTurn: true,
+			score: {
+				black: blackPieceCount,
+				blue: bluePiecesCount,
+				red: redPiecesCount
+			},
+			pieces: buildPieceArray(),
+			viewer: 0,
+			winner: null,
+			teams: generateTeams()
 		};
 	}
 
-	handleClick(i) {
-		const history = this.state.history.slice(0, this.state.stepNumber + 1);
-		const current = history[history.length - 1];
-		const pieces = current.pieces.slice();
-		if (calculateWinner(pieces) || pieces[i]) {
-			return;
+	switchTeamsClick() {
+		this.setState({ isBlueTurn: !this.state.isBlueTurn });
+	}
+
+	setViewer(i) {
+		this.setState({ viewer: i });
+	}
+
+	pieceChosenClick(i) {
+		if (this.state.winner === null) {
+			const updatedPieces = Array.from(this.state.pieces);
+			const clickedPieceOwner = updatedPieces[i].owner;
+			updatedPieces[i].isChosen = true;
+			const newScore = keepScore(updatedPieces, blackPieceCount, bluePiecesCount, redPiecesCount);
+			const newWinner = calculateWinner(newScore, this.state.isBlueTurn);
+			if (newWinner !== null) {
+				updatedPieces = this.disableAllPieces(updatedPieces);
+			}
+			this.setState({
+				score: newScore,
+				pieces: updatedPieces,
+				winner: newWinner,
+				isBlueTurn: switchTurns(this.state.isBlueTurn, clickedPieceOwner)
+			});
 		}
-		pieces[i] = this.state.xIsNext ? 'X' : 'O';
+		return false;
+	}
+
+	promptNewGame() {
+		if (confirm(strResetGame)) {
+			this.newGame();
+		}
+	}
+
+	newGame() {
 		this.setState({
-			history: history.concat([{
-				pieces: pieces
-			}]),
-			stepNumber: history.length,
-			xIsNext: !this.state.xIsNext
+			winner: null,
+			isBlueTurn: true,
+			pieces: buildPieceArray()
 		});
 	}
 
-	jumpTo(step) {
-		this.setState({
-			stepNumber: step,
-			xIsNext: (step % 2) === 0,
-		});
+	disableAllPieces(piecesToDisable) {
+		return piecesToDisable.forEach(piece => piece.isChosen = true);
 	}
 
 	render() {
-		const history = this.state.history;
-		const current = history[this.state.stepNumber];
-		const winner = calculateWinner(current.pieces);
-
-		const moves = history.map((step, move) => {
-			const desc = move ?
-				'Go to move #' + move :
-				'Go to game start';
-			return (
-				<li key={move}>
-					<button onClick={() => this.jumpTo(move)}>{desc}</button>
-				</li>
-			);
-		});
-
-		let status;
-		if (winner) {
-			status = 'Winner: ' + winner;
-		} else {
-			status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-		}
-
 		return (
 			<div className="game">
-				<div className="game-board">
-					<Board
-						pieces={current.pieces}
-						onClick={(i) => this.handleClick(i)}
-					/>
-				</div>
-				<div className="game-info">
-					<div>{status}</div>
-					<ol>{moves}</ol>
-				</div>
+				<Stats
+					isBlueTurn={this.state.isBlueTurn}
+					winner={this.state.winner}
+					viewer={this.state.viewer}
+					score={this.state.score}
+					teams={this.state.teams}
+				/>
+				<Board
+					totalPieces={gamePiecesCount}
+					pieces={this.state.pieces}
+					viewer={this.state.viewer}
+					winner={this.state.winner}
+					onClick={(i) => this.pieceChosenClick(i)}
+				/>
+				<Controls
+					viewer={this.state.viewer}
+					winner={this.state.winner}
+					onClickSwitchTeams={() => this.switchTeamsClick()}
+					onClickViewMaster={() => this.setViewer(0)}
+					onClickViewBlue={() => this.setViewer(1)}
+					onClickViewRed={() => this.setViewer(2)}
+					onClickPromptNewGame={() => this.promptNewGame()}
+				/>
 			</div>
 		);
 	}
