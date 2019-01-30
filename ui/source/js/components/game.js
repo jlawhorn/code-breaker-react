@@ -63,15 +63,15 @@ class Game extends React.Component {
 			updatedPieces[i].isChosen = true;
 			const newScore = keepScore(updatedPieces, blackPieceCount, bluePiecesCount, redPiecesCount);
 			const newWinner = calculateWinner(newScore, this.state.isBlueTurn);
+			if (newWinner !== null) {
+				updatedPieces = this.disableAllPieces(updatedPieces);
+			}
 			this.setState({
 				score: newScore,
 				pieces: updatedPieces,
 				winner: newWinner,
 				isBlueTurn: switchTurns(this.state.isBlueTurn, clickedPieceOwner)
 			});
-			if (newWinner !== null) {
-				this.endGame(newWinner);
-			}
 		}
 		return false;
 	}
@@ -90,10 +90,8 @@ class Game extends React.Component {
 		});
 	}
 
-	endGame() {
-		const updatedPieces = Array.from(this.state.pieces);
-		updatedPieces.forEach(piece => piece.isChosen = true);
-		this.setState({ pieces: updatedPieces });
+	disableAllPieces(piecesToDisable) {
+		return piecesToDisable.forEach(piece => piece.isChosen = true);
 	}
 
 	render() {
