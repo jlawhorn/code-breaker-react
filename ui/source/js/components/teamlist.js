@@ -19,11 +19,11 @@ function TeamList(props) {
     return (
         <div className="teams-list">
             <ul className="team-list">
-                <li className="team-list__item team-list__item--title team--blue">Blue</li>
+                <li className="team-list__item team-list__item--title team--blue text-outline">Blue</li>
                 {generateList(props.teams.blue)}
             </ul>
             <ul className="team-list">
-                <li className="team-list__item team-list__item--title team--red">Red</li>
+                <li className="team-list__item team-list__item--title team--red text-outline">Red</li>
                 {generateList(props.teams.red)}
             </ul>
         </div>

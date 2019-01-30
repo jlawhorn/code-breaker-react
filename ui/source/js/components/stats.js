@@ -17,9 +17,9 @@ function Stats(props) {
         <aside className="sidebar sidebar--left">
             <ul className="status-list">
                 <li className="status-list__item">
-                    <span className="team--blue">{props.score.blue}</span>
+                    <span className="team--blue text-outline">{props.score.blue}</span>
                     <span className="seperator"> - </span>
-                    <span className="team--red">{props.score.red}</span>
+                    <span className="team--red text-outline">{props.score.red}</span>
                 </li>
                 <li className={"status-list__item status-list__item--" + getActiveTeamColorCSS(props.isBlueTurn, props.winner)}>
                     {getStatus(props.winner, props.isBlueTurn)}

@@ -2,11 +2,7 @@ function getActiveTeamColorCSS(isBlueTurn, winner) {
     if (winner) {
         return winner;
     } else {
-        if (isBlueTurn) {
-            return 'blue';
-        } else {
-            return 'red';
-        }
+        return isBlueTurn ? 'blue' : 'red';
     }
 }
 
