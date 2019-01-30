@@ -4,12 +4,8 @@ import Piece from './piece.js';
 function Board(props) {
 
 	function renderPiece(i) {
-		return <Piece
+		return <Piece {...props.pieces[i]}
 			viewer = {props.viewer}
-			value = {props.pieces[i]}
-			word = {props.pieces[i].word}
-			owner = {props.pieces[i].owner}
-			isChosen = {props.pieces[i].isChosen}
 			key = {i}
 			onClick = {() => props.onClick(i)}
 		/>;
