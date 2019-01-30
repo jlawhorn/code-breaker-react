@@ -4,6 +4,7 @@ import Stats from './stats.js';
 import Controls from './controls.js';
 import getWordlist from '../helpers/generateWordList.js';
 import getOwnershipList from '../helpers/generateOwners.js';
+import generateTeams from '../helpers/teams.js';
 import switchTurns from '../helpers/switchTurns.js';
 import keepScore from '../helpers/keepScore.js';
 import calculateWinner from '../helpers/winner.js';
@@ -42,7 +43,8 @@ class Game extends React.Component {
 			},
 			pieces: buildPieceArray(),
 			viewer: 0,
-			winner: null
+			winner: null,
+			teams: generateTeams()
 		};
 	}
 
@@ -102,16 +104,15 @@ class Game extends React.Component {
 					winner={this.state.winner}
 					viewer={this.state.viewer}
 					score={this.state.score}
+					teams={this.state.teams}
 				/>
-				<div className="game__board">
-					<Board
-						totalPieces={gamePiecesCount}
-						pieces={this.state.pieces}
-						viewer={this.state.viewer}
-						winner={this.state.winner}
-						onClick={(i) => this.pieceChosenClick(i)}
-					/>
-				</div>
+				<Board
+					totalPieces={gamePiecesCount}
+					pieces={this.state.pieces}
+					viewer={this.state.viewer}
+					winner={this.state.winner}
+					onClick={(i) => this.pieceChosenClick(i)}
+				/>
 				<Controls
 					viewer={this.state.viewer}
 					winner={this.state.winner}

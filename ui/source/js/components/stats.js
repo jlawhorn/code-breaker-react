@@ -1,4 +1,5 @@
 import React from 'react';
+import TeamList from './teamlist.js';
 import {getActiveTeamColorCSS, getViewerColorCSS, getViewerName} from '../helpers/decodeViewersAndWinners.js';
 import capitalizeFirstLetter from '../helpers/stringFunctions.js';
 
@@ -6,7 +7,7 @@ function Stats(props) {
 
     function getStatus(winner, isBlueTurn) {
 		if (winner === null) {
-			return 'Current Turn: ' + (isBlueTurn ? 'Blue' : 'Red');
+			return `Current Turn: ${(isBlueTurn ? 'Blue' : 'Red')}`;
 		}
 		winner = capitalizeFirstLetter(winner);
 		return `${winner} team wins.`;
@@ -27,6 +28,7 @@ function Stats(props) {
                     Viewing as: {getViewerName(props.viewer)}
                 </li>
             </ul>
+            <TeamList teams={props.teams} />
         </aside>
     );
 }

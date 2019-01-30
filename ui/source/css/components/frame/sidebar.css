@@ -8,6 +8,7 @@
 @media (--large) {
     .sidebar {
         position: fixed;
+        overflow-y: auto;
         margin: 0;
         top: 0;
         bottom: 0;

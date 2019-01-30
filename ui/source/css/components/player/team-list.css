@@ -1,0 +1,43 @@
+.teams-list {
+	margin: 1rem 0;
+}
+
+.team-list {
+	& + & {
+		margin-top: 1rem;
+	}
+}
+
+.team-list__item {
+
+}
+
+.team-list__item--title {
+	font-weight: var(--font-weight-light);
+	border-bottom: 1px dotted var(--color-text);
+}
+
+.team-list__item--player {
+	position: relative;
+	overflow: hidden;
+	padding-right: 1.5rem;
+	margin-top: 0.25rem;
+	font-size: 0.9rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.team-list__item--master {
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		margin-left: 0.5rem;
+		width: 1rem;
+		height: 1rem;
+		right: 0;
+		bottom: 0;
+		background: transparent url('../images/eye.svg') 50% 50% no-repeat;
+		background-size: 1rem 1rem;
+	}
+}

@@ -1,7 +1,5 @@
 function calculateWinner(score, isBlueTurn) {
 
-	console.log(score);
-
 	if (score.black === 0) {
 		if (isBlueTurn) {
 			return 'red';
