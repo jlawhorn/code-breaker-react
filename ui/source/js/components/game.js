@@ -62,6 +62,7 @@ class Game extends React.Component {
 			return 'Current Turn: ' + (this.state.isBlueTurn ? 'Blue' : 'Red');
 		}
 		winner = capitalizeFirstLetter(winner);
+		this.endGame();
 		return `${winner} team is the winner.`;
 	}
 
@@ -72,7 +73,11 @@ class Game extends React.Component {
 	}
 
 	newGame() {
-		console.log('!');
+		console.log('start game');
+	}
+
+	endGame() {
+		console.log('end game');
 	}
 
 	render() {
