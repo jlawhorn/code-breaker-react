@@ -58,7 +58,7 @@ class Game extends React.Component {
 
 	pieceChosenClick(i) {
 		if (this.state.winner === null) {
-			const updatedPieces = Array.from(this.state.pieces);
+			let updatedPieces = Array.from(this.state.pieces);
 			const clickedPieceOwner = updatedPieces[i].owner;
 			updatedPieces[i].isChosen = true;
 			const newScore = keepScore(updatedPieces, blackPieceCount, bluePiecesCount, redPiecesCount);
@@ -91,7 +91,10 @@ class Game extends React.Component {
 	}
 
 	disableAllPieces(piecesToDisable) {
-		return piecesToDisable.forEach(piece => piece.isChosen = true);
+		return piecesToDisable.map(piece => {
+			piece.isChosen = true;
+			return piece;
+		});
 	}
 
 	render() {
