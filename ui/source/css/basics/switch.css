@@ -1,36 +1,69 @@
-.switch {
+.switch,
+.switch-toggle {
+    margin: 0.5rem auto 1rem auto;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+
+.switch-toggle {
     display: flex;
 }
 
-.switch__item {
-    &:first-child {
-        .switch__label {
-            border-radius: 0.5rem 0 0 0.5rem;
+.switch {
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+.switch__label,
+.switch-toggle__label {
+    display: block;
+    color: var(--color-text);
+    background-color: var(--color-gray-30);
+    transition: background-color var(--anim-duration);
+}
+
+.switch__control,
+.switch-toggle__control {
+    display: none;
+    overflow: hidden;
+    height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.switch__control {
+    &:checked {
+        & + .switch__label {
+            background-color: var(--color-white);
         }
+    }
+}
+
+.switch-toggle__item {
+    flex-grow: 1;
+    text-align: center;
+    & + & {
+        border-left: 1px solid var(--color-border);
+    }
+    &:first-child {
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
     }
     &:last-child {
-        .switch__label {
-            border-radius: 0 0.5rem 0.5rem 0;
-        }
-    }
-    & + .switch__item {
-        .switch__label {
-            border-left: 0;
-        }
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
     }
 }
 
-.switch__label {
-    padding: 0.25rem 1rem;
-    box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--color-gray-30);
-    background: linear-gradient(to bottom, var(--color-gray-40) 0%, var(--color-gray-50) 100%);
-}
-
-.switch__input:checked + .switch__label {
-    color: var(--color-white);
-    background: linear-gradient(to bottom, var(--color-green-10) 0%, var(--color-green-20) 100%);
-    .sub-label {
-        font-weight: var(--font-weight-normal);
+.switch-toggle__control {
+    &:checked {
+        & + .switch-toggle__label {
+            color: var(--color-white);
+            &.switch--blue {
+                background-color: var(--color-team-blue);
+            }
+            &.switch--red {
+                background-color: var(--color-team-red);
+            }
+        }
     }
 }

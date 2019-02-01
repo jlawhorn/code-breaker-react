@@ -1,9 +1,11 @@
 import React from 'react';
+import {getPlayerIsMaster} from '../helpers/teams.js';
 
 function Piece(props) {
 
 	function getVisibleClass() {
-		return (props.isChosen || props.viewer === 0) ? `piece--${props.owner}` : 'piece--neutral';
+		return (props.isChosen || getPlayerIsMaster(props.teams, props.playerId) === true)
+			? `piece--${props.owner}` : 'piece--neutral';
 	}
 
 	return (

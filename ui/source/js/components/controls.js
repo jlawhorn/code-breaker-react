@@ -27,39 +27,43 @@ function Controls(props) {
                 <button type="button" className="button button--alt" onClick={props.onClickPromptNewGame}>New Game</button>
                 <fieldset className="control-set">
                     <legend>I'm ...</legend>
-                    <div className="toggleSwitches">
-                        <div className="switchItem">
+                    <div className="switch-toggle">
+                        <div className="switch-toggle__item">
                             <input
                                 type="radio"
-                                name="viewer"
+                                name="playerTeam"
                                 id="viewAsBlue"
                                 defaultChecked={getPlayerTeam(props.teams, props.playerId) === 1}
                                 onClick={props.onClickViewBlue}
+                                className="switch-toggle__control"
                             />
-                            <label htmlFor="viewAsBlue">on Blue Team</label>
+                            <label htmlFor="viewAsBlue" className="switch--blue switch-toggle__label">Blue</label>
                         </div>
-                        <div className="switchItem">
+                        <div className="switch-toggle__item">
                             <input
                                 type="radio"
-                                name="viewer"
+                                name="playerTeam"
                                 id="viewAsRed"
                                 defaultChecked={getPlayerTeam(props.teams, props.playerId) === 2}
                                 onClick={props.onClickViewRed}
+                                className="switch-toggle__control"
                             />
-                            <label htmlFor="viewAsRed">on Red Team</label>
+                            <label htmlFor="viewAsRed" className="switch--red switch-toggle__label">Red</label>
                         </div>
                     </div>
-                    <div className="">
-                        <div className="switchItem">
-                            <input
-                                type="checkbox"
-                                name="master"
-                                id="setAsMaster"
-                                defaultChecked={isMaster(props.teams, props.playerId)}
-                                onClick={e => props.onClickViewMaster(e)}
-                            />
-                            <label htmlFor="setAsMaster">a Master</label>
-                        </div>
+                    <div className="switch">
+                        <input
+                            type="checkbox"
+                            name="master"
+                            id="setAsMaster"
+                            defaultChecked={isMaster(props.teams, props.playerId)}
+                            onClick={e => props.onClickViewMaster(e)}
+                            className="switch__control"
+                        />
+                        <label htmlFor="setAsMaster" className="switch__label">
+                            a Master
+                            <i className="icon icon--master"></i>
+                        </label>
                     </div>
                 </fieldset>
             </div>

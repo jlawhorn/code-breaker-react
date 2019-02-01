@@ -48,12 +48,11 @@ class Game extends React.Component {
 			pieces: buildPieceArray(),
 			winner: null,
 			teams: generateTeams(),
-			viewer: 0,
 			currentPlayerId: currentPlayerId
 		};
 	}
 
-	switchTeamsClick() {
+	switchTeamTurnClick() {
 		this.setState({ isBlueTurn: !this.state.isBlueTurn });
 	}
 
@@ -105,24 +104,23 @@ class Game extends React.Component {
 				<Stats
 					isBlueTurn={this.state.isBlueTurn}
 					winner={this.state.winner}
-					viewer={this.state.viewer}
 					score={this.state.score}
 					teams={this.state.teams}
 				/>
 				<Board
 					totalPieces={gamePiecesCount}
 					pieces={this.state.pieces}
-					viewer={this.state.viewer}
+					teams={this.state.teams}
+					playerId={this.state.currentPlayerId}
 					winner={this.state.winner}
 					onClick={(i) => this.pieceChosenClick(i)}
 				/>
 				<Controls
-					viewer={this.state.viewer}
 					winner={this.state.winner}
 					teams={this.state.teams}
 					playerId={this.state.currentPlayerId}
 					isBlueTurn={this.state.isBlueTurn}
-					onClickSwitchTeams={() => switchTeamsClick()}
+					onClickSwitchTeams={() => this.switchTeamTurnClick()}
 					onClickViewMaster={
 						(e) => this.setState({
 							teams: setPlayerIsMaster(this.state.teams, this.state.currentPlayerId, e.target.checked)

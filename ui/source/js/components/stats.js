@@ -1,6 +1,6 @@
 import React from 'react';
 import TeamList from './teamlist.js';
-import {getActiveTeamColorCSS, getViewerColorCSS, getViewerName} from '../helpers/decodeViewersAndWinners.js';
+import {getActiveTeamColorCSS} from '../helpers/classNames.js';
 import capitalizeFirstLetter from '../helpers/stringFunctions.js';
 
 function Stats(props) {
@@ -23,9 +23,6 @@ function Stats(props) {
                 </li>
                 <li className={"status-list__item text-center status-list__item--" + getActiveTeamColorCSS(props.isBlueTurn, props.winner)}>
                     {getStatus(props.winner, props.isBlueTurn)}
-                </li>
-                <li className={"status-list__item  text-center status-list__item--" + getViewerColorCSS(props.viewer)}>
-                    Viewing as: {getViewerName(props.viewer)}
                 </li>
             </ul>
             <TeamList teams={props.teams} />
