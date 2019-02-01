@@ -10,9 +10,10 @@ function TeamList(props) {
 		/>;
     }
 
-    function generateList(teamArray) {
+    function generateList(teamArray, teamId) {
         let listItemsArray = [];
-        teamArray.forEach((player,i) => listItemsArray.push(renderPlayer(player, i)));
+        teamArray.filter(player => player.team === teamId)
+            .forEach((player,i) => listItemsArray.push(renderPlayer(player, i)));
         return listItemsArray;
     }
 
@@ -20,11 +21,11 @@ function TeamList(props) {
         <div className="teams-list">
             <ul className="team-list">
                 <li className="team-list__item team-list__item--title team--blue text-outline">Blue</li>
-                {generateList(props.teams.blue)}
+                {generateList(props.teams, 1)}
             </ul>
             <ul className="team-list">
                 <li className="team-list__item team-list__item--title team--red text-outline">Red</li>
-                {generateList(props.teams.red)}
+                {generateList(props.teams, 2)}
             </ul>
         </div>
     );

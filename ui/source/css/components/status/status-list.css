@@ -26,3 +26,7 @@
 .text-outline {
     text-shadow: 1px 1px 0 rgba(255,255,255,1), 1px 1px 0 rgba(0,0,0,1);
 }
+
+.display-score {
+    font-size: 1.8rem;
+}

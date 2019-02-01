@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import Board from './board.js';
 import Stats from './stats.js';
 import Controls from './controls.js';
+import getSeed from '../helpers/seed.js';
 import getWordlist from '../helpers/generateWordList.js';
 import getOwnershipList from '../helpers/generateOwners.js';
-import generateTeams from '../helpers/teams.js';
+import {generateTeams, setPlayerTeam, setPlayerIsMaster} from '../helpers/teams.js';
 import switchTurns from '../helpers/switchTurns.js';
 import keepScore from '../helpers/keepScore.js';
 import calculateWinner from '../helpers/winner.js';
@@ -13,6 +14,8 @@ const gamePiecesCount = 25;
 const blackPieceCount = 1;
 const bluePiecesCount = 9;
 const redPiecesCount = 8;
+
+const currentPlayerId = 1;
 
 const strResetGame = 'Start a new game?';
 
@@ -36,24 +39,22 @@ class Game extends React.Component {
 		super(props);
 		this.state = {
 			isBlueTurn: true,
+			seed: getSeed(),
 			score: {
 				black: blackPieceCount,
 				blue: bluePiecesCount,
 				red: redPiecesCount
 			},
 			pieces: buildPieceArray(),
-			viewer: 0,
 			winner: null,
-			teams: generateTeams()
+			teams: generateTeams(),
+			viewer: 0,
+			currentPlayerId: currentPlayerId
 		};
 	}
 
 	switchTeamsClick() {
 		this.setState({ isBlueTurn: !this.state.isBlueTurn });
-	}
-
-	setViewer(i) {
-		this.setState({ viewer: i });
 	}
 
 	pieceChosenClick(i) {
@@ -84,6 +85,7 @@ class Game extends React.Component {
 
 	newGame() {
 		this.setState({
+			seed: getSeed(),
 			winner: null,
 			isBlueTurn: true,
 			pieces: buildPieceArray()
@@ -117,10 +119,25 @@ class Game extends React.Component {
 				<Controls
 					viewer={this.state.viewer}
 					winner={this.state.winner}
-					onClickSwitchTeams={() => this.switchTeamsClick()}
-					onClickViewMaster={() => this.setViewer(0)}
-					onClickViewBlue={() => this.setViewer(1)}
-					onClickViewRed={() => this.setViewer(2)}
+					teams={this.state.teams}
+					playerId={this.state.currentPlayerId}
+					isBlueTurn={this.state.isBlueTurn}
+					onClickSwitchTeams={() => switchTeamsClick()}
+					onClickViewMaster={
+						(e) => this.setState({
+							teams: setPlayerIsMaster(this.state.teams, this.state.currentPlayerId, e.target.checked)
+						})
+					}
+					onClickViewBlue={
+						(e) => this.setState({
+							teams: setPlayerTeam(this.state.teams, this.state.currentPlayerId, 1)
+						})
+					}
+					onClickViewRed={
+						(e) => this.setState({
+							teams: setPlayerTeam(this.state.teams, this.state.currentPlayerId, 2)
+						})
+					}
 					onClickPromptNewGame={() => this.promptNewGame()}
 				/>
 			</div>
