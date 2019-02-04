@@ -1,5 +1,5 @@
 import React from 'react';
-import {getPlayerTeam, getPlayerIsMaster} from '../helpers/teams.js';
+import {getPlayerTeam, getPlayerIsMaster} from '../helpers/teamUtilities.js';
 
 function Controls(props) {
 

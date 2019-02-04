@@ -1,5 +1,5 @@
 import React from 'react';
-import {getPlayerIsMaster} from '../helpers/teams.js';
+import {getPlayerIsMaster} from '../helpers/teamUtilities.js';
 
 function Piece(props) {
 
