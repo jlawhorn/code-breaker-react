@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Board from './board.js';
 import Stats from './stats.js';
 import Controls from './controls.js';
-import getSeed from '../helpers/seed.js';
+import {getSeed} from '../helpers/seed.js';
 import getWordlist from '../helpers/generateWordList.js';
 import getOwnershipList from '../helpers/generateOwners.js';
 import {generateTeams, setPlayerTeam, setPlayerIsMaster} from '../helpers/teams.js';

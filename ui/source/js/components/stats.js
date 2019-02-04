@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamList from './teamlist.js';
 import {getActiveTeamColorCSS} from '../helpers/classNames.js';
-import capitalizeFirstLetter from '../helpers/stringFunctions.js';
+import {capitalizeFirstLetter} from '../helpers/stringUtilities.js';
 
 function Stats(props) {
 

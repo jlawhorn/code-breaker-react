@@ -1,0 +1,31 @@
+.lobby-prompt__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    max-width: 45rem;
+    & > * {
+        display: block;
+    }
+    .label {
+        align-self: center;
+    }
+
+}
+
+@media (--small) {
+    .lobby-prompt__form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (--medium) {
+    .lobby-prompt__form {
+        grid-template-columns: 1fr 2fr 1fr;
+        input[type='submit'] {
+            grid-column: 1 / 4;
+        }
+        input[name='nameInput'] {
+            grid-column: 2/4;
+        }
+    }
+}
