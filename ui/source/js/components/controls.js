@@ -3,9 +3,8 @@ import {getPlayerTeam, getPlayerIsMaster} from '../helpers/teams.js';
 
 function Controls(props) {
 
-    function isMaster(viewerId, controlId) {
-        return getPlayerIsMaster(props.teams, props.playerId);
-    }
+    let playerIsMaster = getPlayerIsMaster(props.teams, props.playerId);
+    let masterIcon = generateMasterIcon();
 
     function isOtherTeamsTurn(teamArray, playerId, isBlueTurn) {
         return getPlayerTeam(teamArray, playerId) === 1 ? !isBlueTurn : true;
@@ -13,6 +12,10 @@ function Controls(props) {
 
     function isGameOver(winnerName) {
         return winnerName !== null ? true : false;
+    }
+
+    function generateMasterIcon() {
+        return playerIsMaster ? <span>Master <i className="icon icon--master"></i></span> : <span>Player</span>;
     }
 
     return (
@@ -26,7 +29,7 @@ function Controls(props) {
                 </button>
                 <button type="button" className="button button--alt" onClick={props.onClickPromptNewGame}>New Game</button>
                 <fieldset className="control-set">
-                    <legend>I'm ...</legend>
+                    <legend>I'm a...</legend>
                     <div className="switch-toggle">
                         <div className="switch-toggle__item">
                             <input
@@ -56,13 +59,12 @@ function Controls(props) {
                             type="checkbox"
                             name="master"
                             id="setAsMaster"
-                            defaultChecked={isMaster(props.teams, props.playerId)}
+                            defaultChecked={playerIsMaster}
                             onClick={e => props.onClickViewMaster(e)}
                             className="switch__control"
                         />
                         <label htmlFor="setAsMaster" className="switch__label">
-                            a Master
-                            <i className="icon icon--master"></i>
+                            { masterIcon }
                         </label>
                     </div>
                 </fieldset>

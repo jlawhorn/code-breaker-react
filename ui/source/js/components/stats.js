@@ -10,7 +10,7 @@ function Stats(props) {
 			return `${(isBlueTurn ? 'Blue' : 'Red')} Turn`;
 		}
 		winner = capitalizeFirstLetter(winner);
-		return `${winner} team wins.`;
+		return `${winner} Wins`;
     }
 
     return (
