@@ -37,9 +37,8 @@ class Controller extends React.Component {
             case 2:
                 pageRoute = <Lobby
                     handleLobbySubmit={this.handleLobbySubmit}
-                    currentPlayerId={this.currentPlayerId}
-                    currentPlayerName={this.currentPlayerName}
-                    currentLobbyName={this.currentLobbyName}
+                    currentPlayerName={this.state.currentPlayerName}
+                    currentLobbyName={this.state.currentLobbyName}
                 />;
                 break;
             case 3:

@@ -67,4 +67,4 @@ function generateTeams() {
     ];
 }
 
-export {generateTeams, setPlayerTeam, setPlayerIsMaster, getPlayerTeam, getPlayerIsMaster};
+export {generateTeams, setPlayerTeam, setPlayerIsMaster, getPlayerTeam, getPlayerIsMaster, getPlayerPositionInArray};

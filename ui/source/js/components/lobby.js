@@ -1,42 +1,50 @@
 import React, {Component} from 'react';
-import {generateTeams} from '../helpers/teamUtilities.js';
+import {generateTeams, getPlayerPositionInArray} from '../helpers/teamUtilities.js';
 import Player from './player.js';
 import TeamList from './teamlist.js';
 
 const maxPlayers = 16;
+const currentPlayerId = 1;
 
 class Lobby extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            teams: generateTeams(),
+            teams: this.populateTeams(),
+            currentPlayerId: currentPlayerId,
             allPlayersReady: false
         };
-        //this.addCurrentPlayer(this.state.teams);
     }
 
     allPlayersReady() {
         console.log('Are all teams ready');
     }
 
-    togglePlayerReady() {
-
+    togglePlayerReady(currentTeams, playerId) {
+        const playerIndex = getPlayerPositionInArray(currentTeams, playerId);
+        if (playerIndex >= 0) {
+            currentTeams[playerIndex].isReady = !currentTeams[playerIndex].isReady;
+            this.setState({ teams: currentTeams });
+        } else {
+            console.error('Player not found');
+        }
     }
 
-    addCurrentPlayer(currentTeams) {
-        if (currentTeams.length < maxPlayers) {
+    populateTeams() {
+        const players = generateTeams();
+        if (players.length < maxPlayers) {
             const currentPlayer = {
-                id: 1,
-                name: this.props.currentPlayer,
+                id: currentPlayerId,
+                name: this.props.currentPlayerName,
                 isMaster: true,
                 team: 1,
                 isReady: false
             };
-            currentTeams.push(currentPlayer);
-            this.setState({ teams: currentTeams });
-        } else {
-            console.error('Too many people');
+            players.push(currentPlayer);
+            return players;
         }
+        console.error('Too many people');
+        return players;
     }
 
     render() {
@@ -51,7 +59,8 @@ class Lobby extends React.Component {
                     Make me a master
                     <button
                         className="button"
-                        onClick={() => this.togglePlayerReady()}
+                        type="button"
+                        onClick={() => this.togglePlayerReady(this.state.teams, this.state.currentPlayerId)}
                     >Ready</button>
                     <input
                         type="submit"
