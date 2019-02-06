@@ -60,7 +60,7 @@ function getWordlist(count) {
         'vaccination', 'vacuum', 'vampire', 'vanguard', 'victory', 'viewpoint', 'villa', 'vista', 'vocalist', 'volcano',
         'voltage',
 
-        'waistcoat', 'waitress', 'wardrobe', 'warmth', 'Washington', 'watchdog', 'wealth', 'whereabouts', 'whisky', 'widget',
+        'waistcoat', 'waitress', 'wardrobe', 'warmth', 'Washington', 'watchdog', 'wealth', 'werewolf', 'whisky', 'widget',
         'width', 'windfall', 'wiring', 'witchcraft', 'words', 'workman',
 
         'yak', 'yogurt', 'youngster',
