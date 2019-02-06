@@ -30,40 +30,39 @@ function getPlayerIsMaster(playerArray, playerId) {
 function generateTeams() {
     return [
         {
-            id: 1,
-            name: 'Joseph',
-            isMaster: true,
-            team: 1
-        },
-        {
             id: 2,
             name: 'Jac',
             isMaster: false,
-            team: 1
+            team: 1,
+            isReady: true
         },
         {
             id: 3,
             name: 'Jeff',
             isMaster: false,
-            team: 1
+            team: 1,
+            isReady: true
         },
         {
             id: 4,
             name: 'Aaron',
             isMaster: true,
-            team: 2
+            team: 2,
+            isReady: true
         },
         {
             id: 5,
             name: 'Anna',
             isMaster: false,
-            team: 2
+            team: 2,
+            isReady: true
         },
         {
             id: 6,
             name: 'Andy',
             isMaster: false,
-            team: 2
+            team: 2,
+            isReady: true
         }
     ];
 }

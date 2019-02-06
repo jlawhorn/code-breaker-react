@@ -7,14 +7,19 @@ function TeamList(props) {
         return <Player
             player={player}
             key={i}
+            currentPlayerId={props.currentPlayerId}
 		/>;
     }
 
     function generateList(teamArray, teamId) {
         let listItemsArray = [];
-        teamArray.filter(player => player.team === teamId)
-            .forEach((player,i) => listItemsArray.push(renderPlayer(player, i)));
-        return listItemsArray;
+        if (teamArray) {
+            teamArray.filter(player => player.team === teamId)
+                .forEach((player,i) => listItemsArray.push(renderPlayer(player, i)));
+            return listItemsArray;
+        }
+        console.error('No team array provided');
+        return <span className="error">Error</span>;
     }
 
     return (

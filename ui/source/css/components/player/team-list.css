@@ -2,16 +2,6 @@
 	margin: 1rem 0;
 }
 
-.team-list {
-	& + & {
-		margin-top: 1rem;
-	}
-}
-
-.team-list__item {
-
-}
-
 .team-list__item--title {
 	font-weight: var(--font-weight-light);
 	border-bottom: 1px dotted var(--color-text);
@@ -39,5 +29,12 @@
 		bottom: 0;
 		background: transparent url('../images/eye.svg') 50% 50% no-repeat;
 		background-size: 1rem 1rem;
+	}
+}
+
+.team-list__item--ready {
+	&::before {
+		content: '✓';
+		color: var(--color-positive);
 	}
 }

@@ -1,4 +1,4 @@
-.lobby-prompt__form {
+.entry-prompt__form {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1rem;
@@ -13,13 +13,13 @@
 }
 
 @media (--small) {
-    .lobby-prompt__form {
+    .entry-prompt__form {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (--medium) {
-    .lobby-prompt__form {
+    .entry-prompt__form {
         grid-template-columns: 1fr 2fr 1fr;
         input[type='submit'] {
             grid-column: 1 / 4;
