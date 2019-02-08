@@ -25,7 +25,7 @@ function getWordlist(count) {
 
         'iceberg', 'illness', 'intersection', 'ivory',
 
-        'jerky', 'joker', 'juror',
+        'Jabberwocky', 'jack', 'jerky', 'joker', 'juror',
 
         'kangaroo', 'ketchup', 'kingdom',
 
