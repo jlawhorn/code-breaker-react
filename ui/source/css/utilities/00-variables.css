@@ -1,11 +1,21 @@
 :root {
 	--color-black: #000;
 	--color-white: #fff;
+	--color-gray-10: #333;
+	--color-gray-20: #666;
+	--color-gray-30: #999;
+	--color-gray-40: #ccc;
 
-	--color-team-blue: rgb(0,0,255);
-	--color-team-red: rgb(255,0,0);
+	--color-team-blue: rgb(10,10,255);
+	--color-team-red: rgb(255,10,10);
+
+	--color-green: rgb(25,150,25);
+	--color-positive: var(--color-green);
+	--color-red: rgb(255,0,0);
+	--color-negative: var(--color-red);
 
 	--color-text: var(--color-black);
+	--color-border: var(--color-gray-30);
 
 	--font-family-primary: 'Montserrat', sans-serif;
 	--font-size-base: 1rem;

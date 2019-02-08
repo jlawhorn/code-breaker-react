@@ -1,13 +1,17 @@
 .icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-    transition: transform var(--anim-duration-fast) var(--anim-easing);
-    svg {
-        max-width: 100%;
-        max-height: 100%;
+    &::after {
+		content: '';
+		display: inline-block;
+		margin-left: 0.5rem;
+		width: 1rem;
+		height: 1rem;
+        vertical-align: -2px;
     }
+}
+
+.icon--master {
+	&::after {
+		background: transparent url('../images/eye.svg') 50% 50% no-repeat;
+        background-size: 1rem 1rem;
+	}
 }

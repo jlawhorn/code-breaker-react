@@ -5,7 +5,8 @@ function Board(props) {
 
 	function renderPiece(i) {
 		return <Piece {...props.pieces[i]}
-			viewer = {props.viewer}
+			teams = {props.teams}
+			playerId = {props.playerId}
 			key = {i}
 			onClick = {() => props.onClick(i)}
 		/>;

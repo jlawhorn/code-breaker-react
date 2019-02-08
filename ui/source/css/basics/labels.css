@@ -2,6 +2,11 @@ legend {
 
 }
 
-.label {
+label[for] {
+    cursor: pointer;
+}
 
+.label {
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-light);
 }

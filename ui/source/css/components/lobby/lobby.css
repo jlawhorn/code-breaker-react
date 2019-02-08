@@ -1,0 +1,15 @@
+.lobby-prompt__form {
+
+}
+
+@media (--medium) {
+    .lobby-prompt__form {
+        .teams-list {
+            display: flex;
+            justify-content: center;
+        }
+        .team-list {
+            margin: 0 1rem;
+        }
+    }
+}

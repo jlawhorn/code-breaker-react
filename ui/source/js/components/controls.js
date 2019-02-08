@@ -1,58 +1,40 @@
 import React from 'react';
+import ChangePlayer from './changePlayer.js';
+
+import {getPlayerTeam, getPlayerIsMaster} from '../helpers/teamUtilities.js';
 
 function Controls(props) {
 
-    function getViewerState(viewerId, controlId) {
-        return viewerId === controlId;
+    let playerIsMaster = getPlayerIsMaster(props.teams, props.playerId);
+    let masterIcon = generateMasterIcon();
+
+    function isOtherTeamsTurn(teamArray, playerId, isBlueTurn) {
+        return getPlayerTeam(teamArray, playerId) === 1 ? !isBlueTurn : true;
     }
 
-    function isWinner(winnerName) {
-        if (winnerName !== null) {
-            return true;
-        }
-        return false;
+    function isGameOver(winnerName) {
+        return winnerName !== null ? true : false;
+    }
+
+    function generateMasterIcon() {
+        return playerIsMaster ? <span>Master <i className="icon icon--master"></i></span> : <span>Player</span>;
     }
 
     return (
         <aside className="sidebar sidebar--right">
             <div className="button-set">
-                <button type="button" className="button" disabled={isWinner(props.winner)} onClick={props.onClickSwitchTeams}>End Turn</button>
+                <button type="button" className="button"
+                    disabled={(isGameOver(props.winner) || isOtherTeamsTurn(props.teams, props.playerId, props.isBlueTurn))}
+                    onClick={props.onClickSwitchTeams}
+                >
+                    End Turn
+                </button>
                 <button type="button" className="button button--alt" onClick={props.onClickPromptNewGame}>New Game</button>
-                <fieldset className="control-set">
-                    <legend>Viewer</legend>
-                    <div className="toggleSwitches">
-                        <div className="switchItem">
-                            <input
-                                type="radio"
-                                name="viewer"
-                                id="viewAsMaster"
-                                defaultChecked={getViewerState(props.viewer, 0)}
-                                onClick={props.onClickViewMaster}
-                            />
-                            <label htmlFor="viewAsMaster">Master</label>
-                        </div>
-                        <div className="switchItem">
-                            <input
-                                type="radio"
-                                name="viewer"
-                                id="viewAsBlue"
-                                defaultChecked={getViewerState(props.viewer, 1)}
-                                onClick={props.onClickViewBlue}
-                            />
-                            <label htmlFor="viewAsBlue">Blue Player</label>
-                        </div>
-                        <div className="switchItem">
-                            <input
-                                type="radio"
-                                name="viewer"
-                                id="viewAsRed"
-                                defaultChecked={getViewerState(props.viewer, 2)}
-                                onClick={props.onClickViewRed}
-                            />
-                            <label htmlFor="viewAsRed">Red Player</label>
-                        </div>
-                    </div>
-                </fieldset>
+                <ChangePlayer
+                    teams={props.teams}
+                    currentPlayerId={props.playerId}
+                    updateTeams={props.updateTeams}
+                />
             </div>
         </aside>
     );
