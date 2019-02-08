@@ -14,9 +14,8 @@ function TeamList(props) {
     function generateList(teamArray, teamId) {
         let listItemsArray = [];
         if (teamArray) {
-            teamArray.filter(player => player.team === teamId)
-                .forEach((player,i) => listItemsArray.push(renderPlayer(player, i)));
-            return listItemsArray;
+            return teamArray.filter(player => player.team === teamId)
+                .map((player,i) => (renderPlayer(player, i)));
         }
         console.error('No team array provided');
         return <span className="error">Error</span>;
