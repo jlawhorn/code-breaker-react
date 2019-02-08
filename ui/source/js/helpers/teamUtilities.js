@@ -27,6 +27,12 @@ function getPlayerIsMaster(playerArray, playerId) {
     return playerArray[position].isMaster;
 }
 
+function getAllPlayersReady(playerArray) {
+    const readyPlayersArray = playerArray.filter(player => player.isReady);
+    const allPlayersReady = (playerArray.length === readyPlayersArray.length);
+    return allPlayersReady;
+}
+
 function generateTeams() {
     return [
         {
@@ -67,4 +73,4 @@ function generateTeams() {
     ];
 }
 
-export {generateTeams, setPlayerTeam, setPlayerIsMaster, getPlayerTeam, getPlayerIsMaster, getPlayerPositionInArray};
+export {generateTeams, setPlayerTeam, setPlayerIsMaster, getPlayerTeam, getPlayerIsMaster, getPlayerPositionInArray, getAllPlayersReady};

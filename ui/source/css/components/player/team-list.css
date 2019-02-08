@@ -38,3 +38,7 @@
 		color: var(--color-positive);
 	}
 }
+
+.team-list__item--current-player {
+	font-weight: var(--font-weight-bold);
+}

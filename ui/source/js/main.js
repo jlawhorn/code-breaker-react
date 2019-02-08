@@ -1,10 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Controller from './components/controller.js';
+import App from './components/app.js';
 
 const rootEl = document.getElementById('app');
 
 render(
-	<Controller />,
+	<App />,
 	rootEl
 );

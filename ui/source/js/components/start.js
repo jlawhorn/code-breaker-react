@@ -3,7 +3,7 @@ import {getSeed, createSeed, setSeed} from '../helpers/seedUtilities.js';
 import {getPlayerName, setPlayerName} from '../helpers/playerUtilities.js';
 import {stripSpecialCharacters} from '../helpers/stringUtilities.js';
 
-class Entry extends React.Component {
+class Start extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -30,7 +30,9 @@ class Entry extends React.Component {
     render() {
         return (
             <div className="entry-prompt">
-                <form onSubmit={() => this.props.handleEntrySubmit(this.state)} className="entry-prompt__form">
+                <form onSubmit={
+                        () => this.props.handleEntrySubmit(this.state.currentPlayerName, this.state.currentLobbyName)
+                    } className="entry-prompt__form">
                     <label htmlFor="currentPlayerName" className="currentPlayerName">Player Name:</label>
                     <input
                         type="text"
@@ -72,4 +74,4 @@ class Entry extends React.Component {
 	}
 }
 
-export default Entry;
+export default Start;

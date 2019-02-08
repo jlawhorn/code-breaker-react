@@ -15,8 +15,6 @@ const blackPieceCount = 1;
 const bluePiecesCount = 9;
 const redPiecesCount = 8;
 
-const currentPlayerId = 1;
-
 const strResetGame = 'Start a new game?';
 
 function buildPieceArray() {
@@ -39,7 +37,7 @@ class Game extends React.Component {
 		super(props);
 		this.state = {
 			isBlueTurn: true,
-			seed: getSeed(),
+			seed: this.props.seed,
 			score: {
 				black: blackPieceCount,
 				blue: bluePiecesCount,
@@ -47,8 +45,8 @@ class Game extends React.Component {
 			},
 			pieces: buildPieceArray(),
 			winner: null,
-			teams: generateTeams(),
-			currentPlayerId: currentPlayerId
+			teams: this.props.teams,
+			currentPlayerId: this.props.currentPlayerId
 		};
 	}
 
@@ -121,22 +119,8 @@ class Game extends React.Component {
 					playerId={this.state.currentPlayerId}
 					isBlueTurn={this.state.isBlueTurn}
 					onClickSwitchTeams={() => this.switchTeamTurnClick()}
-					onClickViewMaster={
-						(e) => this.setState({
-							teams: setPlayerIsMaster(this.state.teams, this.state.currentPlayerId, e.target.checked)
-						})
-					}
-					onClickViewBlue={
-						(e) => this.setState({
-							teams: setPlayerTeam(this.state.teams, this.state.currentPlayerId, 1)
-						})
-					}
-					onClickViewRed={
-						(e) => this.setState({
-							teams: setPlayerTeam(this.state.teams, this.state.currentPlayerId, 2)
-						})
-					}
 					onClickPromptNewGame={() => this.promptNewGame()}
+					updateTeams={this.props.updateTeams}
 				/>
 			</div>
 		);

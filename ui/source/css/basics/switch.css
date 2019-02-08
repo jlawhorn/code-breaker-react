@@ -19,7 +19,7 @@
 .switch-toggle__label {
     display: block;
     color: var(--color-text);
-    background-color: var(--color-gray-30);
+    background-color: transparent;
     transition: background-color var(--anim-duration);
 }
 

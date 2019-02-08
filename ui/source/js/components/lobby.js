@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {generateTeams, getPlayerPositionInArray} from '../helpers/teamUtilities.js';
-import Player from './player.js';
-import TeamList from './teamlist.js';
+import TeamList from './teamList.js';
+import ChangePlayer from './changePlayer.js';
+
+import {generateTeams, getPlayerPositionInArray, getAllPlayersReady} from '../helpers/teamUtilities.js';
 
 const maxPlayers = 16;
 const currentPlayerId = 1;
@@ -12,19 +13,21 @@ class Lobby extends React.Component {
 		this.state = {
             teams: this.populateTeams(),
             currentPlayerId: currentPlayerId,
+            currentPlayerIsReady: false,
             allPlayersReady: false
         };
-    }
-
-    allPlayersReady() {
-        console.log('Are all teams ready');
     }
 
     togglePlayerReady(currentTeams, playerId) {
         const playerIndex = getPlayerPositionInArray(currentTeams, playerId);
         if (playerIndex >= 0) {
             currentTeams[playerIndex].isReady = !currentTeams[playerIndex].isReady;
-            this.setState({ teams: currentTeams });
+            const isAllPlayersReady = getAllPlayersReady(currentTeams);
+            this.setState({
+                teams: currentTeams,
+                currentPlayerIsReady: currentTeams[playerIndex].isReady,
+                allPlayersReady: isAllPlayersReady
+            });
         } else {
             console.error('Player not found');
         }
@@ -36,7 +39,7 @@ class Lobby extends React.Component {
             const currentPlayer = {
                 id: currentPlayerId,
                 name: this.props.currentPlayerName,
-                isMaster: true,
+                isMaster: false,
                 team: 1,
                 isReady: false
             };
@@ -48,26 +51,36 @@ class Lobby extends React.Component {
     }
 
     render() {
+        const buttonReadyText = this.state.currentPlayerIsReady ? 'Ready' : 'Unready';
+
         return (
             <div className="lobby">
-                <form onSubmit={() => this.props.handleLobbySubmit(this.state)} className="lobby-prompt__form">
+                <form onSubmit={() => this.props.handleLobbySubmit(this.state.teams, this.state.currentPlayerId)} className="lobby-prompt__form">
+                    <h1 className="lobby__title">#{this.props.currentLobbyName}</h1>
                     <TeamList
                         teams={this.state.teams}
-                        currentPlayerId={this.props.currentPlayerId}
+                        currentPlayerId={this.state.currentPlayerId}
                     />
-                    Change Team Arrows
-                    Make me a master
-                    <button
-                        className="button"
-                        type="button"
-                        onClick={() => this.togglePlayerReady(this.state.teams, this.state.currentPlayerId)}
-                    >Ready</button>
-                    <input
-                        type="submit"
-                        value="Start Game"
-                        className="button button--alt"
-                        disabled={!this.state.allPlayersReady}
+                    <ChangePlayer
+                        teams={this.state.teams}
+                        currentPlayerId={this.state.currentPlayerId}
+                        updateTeams={this.props.updateTeams}
                     />
+                    <div className="button-set">
+                        <span className="label">...who is...</span>
+                        <button
+                            className="button"
+                            type="button"
+                            onClick={() => this.togglePlayerReady(this.state.teams, this.state.currentPlayerId)}
+                        >{buttonReadyText}</button>
+                        <span className="label">...to...</span>
+                        <input
+                            type="submit"
+                            value="Start the Game"
+                            className="button button--alt"
+                            disabled={!this.state.allPlayersReady}
+                        />
+                    </div>
                 </form>
             </div>
         );
