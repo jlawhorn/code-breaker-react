@@ -11,7 +11,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            page: 1,
+            page: 'start',
             seed: null,
             teams: null,
             currentPlayerId: null,
@@ -30,10 +30,10 @@ class App extends React.Component {
     getPage(pageId) {
         let pageRoute;
         switch(pageId) {
-            case 1:
+            case 'start':
                 pageRoute = <Start handleEntrySubmit={this.handleEntrySubmit} />;
                 break;
-            case 2:
+            case 'lobby':
                 pageRoute = <Lobby
                     handleLobbySubmit={this.handleLobbySubmit}
                     currentPlayerName={this.state.currentPlayerName}
@@ -41,7 +41,7 @@ class App extends React.Component {
                     updateTeams={this.updateTeams}
                 />;
                 break;
-            case 3:
+            case 'game':
                 pageRoute = <Game
                     updateTeams={this.updateTeams}
                     currentPlayerId={this.state.currentPlayerId}
@@ -60,7 +60,7 @@ class App extends React.Component {
     handleEntrySubmit(currentPlayerName, currentLobbyName) {
         setSeed(currentLobbyName);
         this.setState({
-            page: 2,
+            page: 'lobby',
             currentPlayerName: currentPlayerName,
             currentLobbyName: currentLobbyName,
             seed: currentLobbyName
@@ -69,7 +69,7 @@ class App extends React.Component {
 
     handleLobbySubmit(lobbyTeams, currentPlayerId) {
         this.setState({
-            page: 3,
+            page: 'game',
             teams: lobbyTeams,
             currentPlayerId: currentPlayerId
         });

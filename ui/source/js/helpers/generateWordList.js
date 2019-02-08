@@ -4,7 +4,7 @@ function getWordlist(count) {
     const wordList = [
         'air', 'ambulance', 'ammonia', 'apple', 'appendix', 'archipelago',
 
-        'ball', 'bark', 'baron', 'barrier', 'bed', 'belt', 'bill', 'bingo', 'blackberry', 'bonus',
+        'ball', 'banana', 'bark', 'baron', 'barrier', 'bed', 'belt', 'bill', 'bingo', 'blackberry', 'bonus',
         'bottle', 'bow', 'box', 'broccoli', 'brunch', 'bug', 'bugle',
 
         'cap', 'cartridge', 'cassette', 'catfish', 'cemetery', 'check', 'Chihuahua', 'cilantro', 'circus',
@@ -16,12 +16,12 @@ function getWordlist(count) {
 
         'Easter', 'eagle', 'editor', 'epilepsy', 'equator', 'error', 'espionage',
 
-        'fall', 'fan', 'flask', 'flora', 'fries', 'fundraiser', 'fusion',
+        'fall', 'fan', 'flask', 'flora', 'fox', 'fries', 'fundraiser', 'fusion',
 
         'glass', 'glove', 'glucose', 'google', 'green', 'gun',
 
         'hallway', 'hamburger', 'hammock', 'hand', 'head', 'heart', 'Himalayas', 'hole', 'honey', 'horn',
-        'horseman', 'hurricane',
+        'horseman', 'hurricane', 'hydra',
 
         'iceberg', 'illness', 'intersection', 'ivory',
 
